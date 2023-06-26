@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>C++ Primer</title>
+      <link href="/2023/05/14/C++/C++_Primer_(1)/"/>
+      <url>/2023/05/14/C++/C++_Primer_(1)/</url>
+      
+        <content type="html"><![CDATA[<h2 id="主要写自己新学习的知识"><a href="#主要写自己新学习的知识" class="headerlink" title="主要写自己新学习的知识"></a>主要写自己新学习的知识</h2><h2 id="第一章-开始"><a href="#第一章-开始" class="headerlink" title="第一章 开始"></a>第一章 开始</h2><p>-输入运算符&gt;&gt;<br>-输出运算符&lt;&lt;</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;istream&gt;</span></span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> -C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cmd和powershell</title>
+      <link href="/2023/05/04/others/cmd%E5%92%8Cpowershell%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2023/05/04/others/cmd%E5%92%8Cpowershell%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<p>-在使用hexo框架中的butterfly主题时，发现用cmd能够使用hexo指令，用powershell反而不能，因此上网查询：</p><h2 id="cmd和powershell"><a href="#cmd和powershell" class="headerlink" title="cmd和powershell"></a>cmd和powershell</h2><p>   介绍先空着</p><h2 id="挖个坑吧-2023-5-3"><a href="#挖个坑吧-2023-5-3" class="headerlink" title="挖个坑吧-2023-5-3"></a>挖个坑吧-2023-5-3</h2><h3 id="找到了powershell使用"><a href="#找到了powershell使用" class="headerlink" title="找到了powershell使用"></a>找到了powershell使用</h3><p>百度一下找到了解决方法  </p><p>附上<br><a href="https://sobaigu.com/hexo-con-not-process-in-powershell.html">原文链接</a>  </p><p>再开启管理员权限的情况下使用该指令</p><blockquote><p>Set-ExecutionPolicy -ExecutionPolicy UNRESTRICTED  </p></blockquote><p>输入Y，你就可以愉快写blog了</p><p>百度一下获取powershell管理员权限的指令，指令为：</p><blockquote><p>Start-Process powershell -Verb runAs</p></blockquote><p>开始尝试吧，我先在blog文件夹打开powershell</p><p><img src="/img/04.png" alt="1"></p><p>开启管理员权限</p><blockquote><p>Start-Process powershell -Verb runAs</p></blockquote><p><img src="/img/05.png" alt="2"></p><p>黑屏变蓝屏了（好像默认打开是黑色背景，开启管理员权限变蓝色背景）</p><p>输入指令</p><blockquote><p>Set-ExecutionPolicy -ExecutionPolicy UNRESTRICTED<br>并输入Y</p></blockquote><p><img src="/img/06.png" alt="3"></p><p>运行hexo指令</p><p><img src="/img/07.png" alt="4"></p><p>识别不出来，还得重新进文件💢</p><p>输入指令，生成成功</p><p><img src="/img/08.png" alt="5"></p><p>总结，还是cmd快💢<br>-2023-5-4</p><h3 id="再挖个坑，搞个python脚本一键部署-2023-5-4"><a href="#再挖个坑，搞个python脚本一键部署-2023-5-4" class="headerlink" title="再挖个坑，搞个python脚本一键部署-2023-5-4"></a>再挖个坑，搞个python脚本一键部署-2023-5-4</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> -text </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -text </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows逆向小细节</title>
+      <link href="/2023/05/03/windows%E9%80%86%E5%90%91%E5%B0%8F%E7%BB%86%E8%8A%82/"/>
+      <url>/2023/05/03/windows%E9%80%86%E5%90%91%E5%B0%8F%E7%BB%86%E8%8A%82/</url>
+      
+        <content type="html"><![CDATA[<h2 id="小学一点，写写自己的拙见，如有错误请大佬指出："><a href="#小学一点，写写自己的拙见，如有错误请大佬指出：" class="headerlink" title="小学一点，写写自己的拙见，如有错误请大佬指出："></a>小学一点，写写自己的拙见，如有错误请大佬指出：</h2><h2 id="直接写吧"><a href="#直接写吧" class="headerlink" title="直接写吧"></a>直接写吧</h2><pre><code>-函数!strcmp（）返回值才为1-逆向分析倒着来，flag往往是通过一系列加密等方式得来，从后向前分析可以防止头脑爆炸ಠ_ರೃ。一定要注意加密解密之间的关系，不要加密再加密&gt;ᯅ&lt;-memcpy()函数用于：复制内存块</code></pre><h3 id="C连续定义变量分配"><a href="#C连续定义变量分配" class="headerlink" title="C连续定义变量分配"></a>C连续定义变量分配</h3><ul><li>基本类型变量：int（4字节）、char（1字节）、double（8字节）、float（4字节）连续定义变量分配后，先定义的变量在高位，后定义的变量在低位。</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;c);</span><br><span class="line">    <span class="comment">//%p按十六进制输出，可以用于打印地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/img/01.png" alt="这是运行代码"></p><ul><li>数组：a[0]地址比a[1]地址低，与基本类型相反<br>  先定义的数组地址比后定义的数组地址高</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> a[<span class="number">2</span>];</span><br><span class="line">    <span class="type">char</span> b[<span class="number">2</span>];</span><br><span class="line">    <span class="type">char</span> c[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;c);</span><br><span class="line">    <span class="comment">//%p按十六进制输出，可以用于打印地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/img/02.jpg" alt="这是运行代码"><br>修改一下</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> a[<span class="number">2</span>];</span><br><span class="line">    <span class="type">char</span> b[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;a[<span class="number">0</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;address：  %p\n&quot;</span>,&amp;b[<span class="number">2</span>]);</span><br><span class="line">    <span class="comment">//%p按十六进制输出，可以用于打印地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/img/03.jpg" alt="这是运行代码，a[0]和b[2]地址相同"><br>可见，连续定义数组的内存分配是连续的，且先定义的数组地址比后定义的数组地址高。</p><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="jd-gui：Java-反编译工具"><a href="#jd-gui：Java-反编译工具" class="headerlink" title="jd-gui：Java 反编译工具"></a>jd-gui：Java 反编译工具</h4><h4 id="jadx-gui：Android反编译gui工具"><a href="#jadx-gui：Android反编译gui工具" class="headerlink" title="jadx-gui：Android反编译gui工具"></a>jadx-gui：Android反编译gui工具</h4><h4 id="upx-脱壳工具使用方法"><a href="#upx-脱壳工具使用方法" class="headerlink" title="upx:  脱壳工具使用方法"></a>upx:  脱壳工具使用方法</h4><pre><code>- 1.打开upx脱壳工具       upx.exe(upx应用层程序名) -h-2.一大串字符…（⊙＿⊙；）…  -3.输入脱壳指令      upx-d （文件位置）    -tips：要加入后缀名</code></pre><h4 id="exeinfo-PE：程序检查器-（ida未动，exeinfo-PE先行）"><a href="#exeinfo-PE：程序检查器-（ida未动，exeinfo-PE先行）" class="headerlink" title="exeinfo PE：程序检查器    （ida未动，exeinfo PE先行）"></a>exeinfo PE：程序检查器    （ida未动，exeinfo PE先行）</h4><h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> -text </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -text </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>周报2023</title>
+      <link href="/2023/05/01/%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5/2023/"/>
+      <url>/2023/05/01/%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5/2023/</url>
+      
+        <content type="html"><![CDATA[<h2 id="始于2023-x2F-5-x2F-1"><a href="#始于2023-x2F-5-x2F-1" class="headerlink" title="始于2023&#x2F;5&#x2F;1"></a>始于2023&#x2F;5&#x2F;1</h2><pre><code> let&#39;s begin</code></pre><h2 id="五月"><a href="#五月" class="headerlink" title="五月"></a>五月</h2><h3 id="第10周"><a href="#第10周" class="headerlink" title="第10周"></a>第10周</h3><pre><code>5/71.搞了这个blog。2.做了一些re的题，流程掌握了，但是解题还是要看wp，还得继续学习，iscc的题还不太会做，下周抽时间解。3.steam饥荒打折和朋友v♂an的很开心。</code></pre><h3 id="第11周"><a href="#第11周" class="headerlink" title="第11周"></a>第11周</h3><h4 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h4><pre><code>5/71.完全看完汇编。2.iscc题得做出来一些吧🤔。3.re。4.完善blog。5.others</code></pre><h4 id="完成情况"><a href="#完成情况" class="headerlink" title="完成情况"></a>完成情况</h4><pre><code> 5/14 1.√。 2.搞出来一题，是我太菜了🤔，题目看得头大。加油吧🤔 3.在搓了,看着wp做吧。 4.完善了评论区。 5.C++到了，开搓。 </code></pre><h3 id="第12周"><a href="#第12周" class="headerlink" title="第12周"></a>第12周</h3><h4 id="计划-1"><a href="#计划-1" class="headerlink" title="计划"></a>计划</h4><pre><code> 5/14 1.每日一re 2.C++学习 3.ISCC</code></pre><h4 id="完成情况-1"><a href="#完成情况-1" class="headerlink" title="完成情况"></a>完成情况</h4><pre><code> 5/23 1.完成2/3 2.C++学习先暂停一下，有深入理解计算机系统要看。 3.就这样了把 4.羊了好难受 </code></pre><h3 id="第13周"><a href="#第13周" class="headerlink" title="第13周"></a>第13周</h3><h4 id="计划-2"><a href="#计划-2" class="headerlink" title="计划"></a>计划</h4><pre><code>5/231.re2.深入理解计算机系统3.校内CTF4.开始准备期末复习</code></pre><h4 id="完成情况-2"><a href="#完成情况-2" class="headerlink" title="完成情况"></a>完成情况</h4><pre><code>5/281.死磕一题2.完成第二章学习3.找到队友了4.加油！！</code></pre><h2 id="六月"><a href="#六月" class="headerlink" title="六月"></a>六月</h2><h3 id="第14周"><a href="#第14周" class="headerlink" title="第14周"></a>第14周</h3><h4 id="计划-3"><a href="#计划-3" class="headerlink" title="计划"></a>计划</h4><pre><code>5/281.物理复习2.CTF校赛3.pwn学习4.深入理解计算机系统</code></pre><h4 id="完成情况-3"><a href="#完成情况-3" class="headerlink" title="完成情况"></a>完成情况</h4><pre><code>6/61.复习中，准备考试了2.加油3.正在学习栈溢出4.必要知识看的差不多了</code></pre><h3 id="第15周"><a href="#第15周" class="headerlink" title="第15周"></a>第15周</h3><h4 id="计划-4"><a href="#计划-4" class="headerlink" title="计划"></a>计划</h4><pre><code>6/61.考试是第一要务，加油！</code></pre><h4 id="完成情况-4"><a href="#完成情况-4" class="headerlink" title="完成情况"></a>完成情况</h4><pre><code>6/151.大物和体育过了！！</code></pre><h3 id="第16周"><a href="#第16周" class="headerlink" title="第16周"></a>第16周</h3><h4 id="计划-5"><a href="#计划-5" class="headerlink" title="计划"></a>计划</h4><pre><code> 6/15 1.离散数学  2.高等数学 3.思想道德与法治 4.英语四级</code></pre><h4 id="完成情况-5"><a href="#完成情况-5" class="headerlink" title="完成情况"></a>完成情况</h4><pre><code>    6/21    海星</code></pre><h3 id="第17周"><a href="#第17周" class="headerlink" title="第17周"></a>第17周</h3><h4 id="计划-6"><a href="#计划-6" class="headerlink" title="计划"></a>计划</h4><pre><code>  6/21  1.英语和java考试  2.C++  3.pwn</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> -周报 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -周报 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello</title>
+      <link href="/2023/04/28/Hello/hello/"/>
+      <url>/2023/04/28/Hello/hello/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo"></a>Hello hexo</h2><h3 id="this-is-code"><a href="#this-is-code" class="headerlink" title="this is code"></a>this is code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Javahelloworld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello hexo\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="这是图片测试"><a href="#这是图片测试" class="headerlink" title="这是图片测试"></a>这是图片测试</h2><p><img src="https://img.gejiba.com/images/f378be6c7dcb686abbd93c1e470ccdc1.gif" alt="图片测试"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>置顶</title>
+      <link href="/2023/04/28/Hello/%E7%9B%AE%E6%A0%87/"/>
+      <url>/2023/04/28/Hello/%E7%9B%AE%E6%A0%87/</url>
+      
+        <content type="html"><![CDATA[<h2 id="blog相关"><a href="#blog相关" class="headerlink" title="blog相关"></a>blog相关</h2><ul><li><p>blog都是套模板的，可以去友链看看◕‿◕  </p></li><li><p>blog评论区还不能用</p></li></ul><h2 id="这是我的目标"><a href="#这是我的目标" class="headerlink" title="这是我的目标"></a>这是我的目标</h2><h3 id="book《深入理解计算机系统》学习"><a href="#book《深入理解计算机系统》学习" class="headerlink" title="book《深入理解计算机系统》学习"></a>book《深入理解计算机系统》学习</h3><pre><code>   第二章ing</code></pre><h3 id="re-amp-pwn学习"><a href="#re-amp-pwn学习" class="headerlink" title="re&amp;pwn学习"></a>re&amp;pwn学习</h3><pre><code>re能解出一些简单题了，pwn正在打基础</code></pre><h3 id="c-的学习"><a href="#c-的学习" class="headerlink" title="c++的学习"></a>c++的学习</h3><pre><code> 0.5%</code></pre><h3 id="校园宅急送的可行性"><a href="#校园宅急送的可行性" class="headerlink" title="校园宅急送的可行性"></a>校园宅急送的可行性</h3><pre><code>  校内已有小程序，在思考如何应对--新建文件夹ing</code></pre><h3 id="看完汇编语言"><a href="#看完汇编语言" class="headerlink" title="看完汇编语言"></a>看完汇编语言</h3><pre><code>学习进度：100%   复习进度：0%  计划写个学习笔记：0%</code></pre><h3 id="会用python写脚本"><a href="#会用python写脚本" class="headerlink" title="会用python写脚本"></a>会用python写脚本</h3><pre><code>  还不太熟练编写，要熟悉一些python标准库的函数。</code></pre><h3 id="写blog"><a href="#写blog" class="headerlink" title="写blog"></a>写blog</h3><pre><code> ————ing</code></pre><h3 id="改造家里旧电脑"><a href="#改造家里旧电脑" class="headerlink" title="改造家里旧电脑"></a>改造家里旧电脑</h3><pre><code>已经在计划了，准备装个Ubuntu</code></pre><h3 id="学会Ubuntu-linux，kali-linux的使用"><a href="#学会Ubuntu-linux，kali-linux的使用" class="headerlink" title="学会Ubuntu linux，kali linux的使用"></a>学会Ubuntu linux，kali linux的使用</h3><pre><code>正在学习~~~</code></pre><h3 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h3><pre><code>learning~~</code></pre><h3 id="html5-css3-javascript"><a href="#html5-css3-javascript" class="headerlink" title="html5+css3+javascript"></a>html5+css3+javascript</h3><pre><code>暑假再搞</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> -target </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -target </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
