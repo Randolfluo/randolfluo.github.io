@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机网络概述 | Randolfluo's blog</title><meta name="author" content="Randolf luo"><meta name="copyright" content="Randolf luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络概述">
+<meta property="og:url" content="http://randolfluo.github.io/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/overview/index.html">
+<meta property="og:site_name" content="Randolfluo&#39;s blog">
+<meta property="og:description" content="计算机网络">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://randolfluo.github.io/img/avater.jpg">
+<meta property="article:published_time" content="2023-09-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-19T16:00:00.000Z">
+<meta property="article:author" content="Randolf luo">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://randolfluo.github.io/img/avater.jpg"><link rel="shortcut icon" href="C:\Users\RandolfluoPC\Desktop\randolfluoblog\source\img\fengmian.png"><link rel="canonical" href="http://randolfluo.github.io/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/overview/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络概述',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-20 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/fengmian.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Randolfluo's blog"><span class="site-name">Randolfluo's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络概述</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-19T16:00:00.000Z" title="发表于 2023-09-20 00:00:00">2023-09-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-19T16:00:00.000Z" title="更新于 2023-09-20 00:00:00">2023-09-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机网络概述"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/overview/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/overview/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="P-39-1-02-试简述分组交换的要点"><a href="#P-39-1-02-试简述分组交换的要点" class="headerlink" title="P 39 1-02 试简述分组交换的要点"></a>P 39 1-02 试简述分组交换的要点</h3><h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a><strong>特点</strong>：</h4><p>采用存储转发的机制；</p>
+<p>统计时分复用（又称异步时分）；</p>
+<p>具有差错控制和流量控制。</p>
+<h5 id="存储转发"><a href="#存储转发" class="headerlink" title="存储转发"></a>存储转发</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%98%E5%82%A8%E8%BD%AC%E5%8F%91/9763136">存储转发_百度百科 (baidu.com)</a></p>
+<p>存储转发（Store and Forward）是计算机网络领域使用得最为广泛的技术之一，以太网交换机的控制器先将输入端口到来的数据包缓存起来，先检查数据包是否正确，并过滤掉冲突包错误。确定包正确后，取出目的地址，通过查找表找到想要发送的输出端口地址，然后将该包发送出去。正因如此，存储转发方式在数据处理时延时大，这是它的不足，但是它可以对进入交换机的数据包进行错误检测，并且能支持不同速度的输入&#x2F;输出端口间的交换，可有效地改善网络性能。它的另一优点就是这种交换方式支持不同速度端口间的转换，保持高速端口和低速端口间协同工作。实现的办法是将10Mbps低速包存储起来，再通过100Mbps速率转发到端口上。</p>
+<h5 id="异步时分复用"><a href="#异步时分复用" class="headerlink" title="异步时分复用"></a>异步时分复用</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%82%E6%AD%A5%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8/666141">异步时分复用_百度百科 (baidu.com)</a></p>
+<p>异步时分复用又称统计时分复用( STDM, Statistical Time Division Multiplexing)或智能时分复用，它对用户采用动态“<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%89%E9%9C%80%E5%88%86%E9%85%8D/4332935?fromModule=lemma_inlink">按需分配</a>”时隙，即只要用户有传输数据的需要时就应为其分配时隙，用户需要传输的数据量较大时，可以分配给它较多的时隙，需要传送的数据量较小时，就分配给它较小的时隙；用户如果没有数据需要传送，则可以不分配时隙给它。因此每个用户分配的时隙宽度及顺序均不固定，而是随用户要求传输的数据量变化而变化。异步时分多路复用是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/18763?fromModule=lemma_inlink">计算机网络</a>中应用广泛的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF/5785640?fromModule=lemma_inlink">多路复用技术</a>。 [1] </p>
+<p>·</p>
+<h5 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6/1614020">差错控制_百度百科 (baidu.com)</a></p>
+<p>差错控制（error control）是在数字通信中利用编码方法对传输中产生的差错进行控制，以提高数字消息传输的准确性。</p>
+<h5 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6/16688240">分组交换流量控制_百度百科 (baidu.com)</a></p>
+<p>差错控制（error control）是在数字通信中利用编码方法对传输中产生的差错进行控制，以提高数字消息传输的准确性。</p>
+<p><img src="/../../img/image-20230920153812547.png" alt="image-20230920153812547"></p>
+<h3 id="P-39-1-12-互联网的两大组成部分（边缘部分与核心部分）的特点是什么？他们的工作方式各有什么特点？"><a href="#P-39-1-12-互联网的两大组成部分（边缘部分与核心部分）的特点是什么？他们的工作方式各有什么特点？" class="headerlink" title="P 39 1-12 互联网的两大组成部分（边缘部分与核心部分）的特点是什么？他们的工作方式各有什么特点？"></a>P 39 1-12 互联网的两大组成部分（边缘部分与核心部分）的特点是什么？他们的工作方式各有什么特点？</h3><p>边缘部分：由各主机构成，用户直接进行信息处理和信息共享；低速连入<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%A0%B8%E5%BF%83%E7%BD%91&spm=1001.2101.3001.7020">核心网</a>。</p>
+<p>核心部分：由各<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%B7%AF%E7%94%B1%E5%99%A8&spm=1001.2101.3001.7020">路由器</a>连网，负责为边缘部分提供高速远程分组交换。</p>
+<h3 id="P-39-1-14计算机网络有哪些常用的性能指标"><a href="#P-39-1-14计算机网络有哪些常用的性能指标" class="headerlink" title="P 39 1-14计算机网络有哪些常用的性能指标"></a>P 39 1-14计算机网络有哪些常用的性能指标</h3><h4 id="1、速率"><a href="#1、速率" class="headerlink" title="1、速率"></a>1、速率</h4><p><strong>速率</strong>指的是<strong>数据的传送速率</strong>，它也称为<strong>数据率</strong>或<strong>比特率</strong></p>
+<h4 id="2、带宽-设计标准"><a href="#2、带宽-设计标准" class="headerlink" title="2、带宽(设计标准)"></a>2、带宽(设计标准)</h4><p>表示某信道允许通过的信号频带范围就称为该信道的带宽。      （频域称谓）</p>
+<p>在计算机网络中，带宽用来表示网络中某通道传输数据的能力 bit&#x2F;s。     （时域称谓）</p>
+<h4 id="3、吞吐量（实际情况）"><a href="#3、吞吐量（实际情况）" class="headerlink" title="3、吞吐量（实际情况）"></a>3、吞吐量（实际情况）</h4><p>吞吐量表示在单位时间内通过某个网络的实际数据量。</p>
+<h4 id="4、时延"><a href="#4、时延" class="headerlink" title="4、时延"></a>4、时延</h4><p>时延是指数据从网络的一端传送到另一端所需的时间。</p>
+<h5 id="发送时延（传输时延）"><a href="#发送时延（传输时延）" class="headerlink" title="发送时延（传输时延）"></a>发送时延（传输时延）</h5><p>发送时延是主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需的时间。</p>
+<p>发送时延&#x3D;数据帧长度（bit）&#x2F;发送速率（bit&#x2F;s）</p>
+<h5 id="传播时延"><a href="#传播时延" class="headerlink" title="传播时延"></a>传播时延</h5><p>传播时延是电磁波在信道中传播一定的距离需要花费的时间。</p>
+<p>传播时延&#x3D;信道长度（m）&#x2F;电磁波在信道上大的传播速率（m&#x2F;s）</p>
+<h5 id="处理时延"><a href="#处理时延" class="headerlink" title="处理时延"></a>处理时延</h5><p>主机或路由器在收到分组时需要花费一定时间进行处理，例如分析分组的首部，从分组中提取数据部分、进行差错检验或查找合适的路由等，这就产生了处理时延。</p>
+<h5 id="排队时延"><a href="#排队时延" class="headerlink" title="排队时延"></a>排队时延</h5><p>分组在进行网络传输时，要经过许多路由器。但分组在进入路由器后要先在输入队列中排队等待，在路由器确定了转发接口后，还要在输出队列中排队等待转发。这就产生了排队时延。排队时延的长短取决于网络当时的通信量。当网络的通信量很大时会发生队列溢出，使分组丢失，这相当于排队时延无穷大。</p>
+<h5 id="总时延-x3D-发送时延-传播时延-处理时延-排队时延。"><a href="#总时延-x3D-发送时延-传播时延-处理时延-排队时延。" class="headerlink" title="总时延&#x3D;发送时延+传播时延+处理时延+排队时延。"></a><strong>总时延&#x3D;发送时延+传播时延+处理时延+排队时延。</strong></h5><p><img src="/../../img/image-20230920164703542.png" alt="image-20230920164703542"></p>
+<h4 id="5、时延带宽积（以比特为单位的链路长度）"><a href="#5、时延带宽积（以比特为单位的链路长度）" class="headerlink" title="5、时延带宽积（以比特为单位的链路长度）"></a>5、时延带宽积（以比特为单位的链路长度）</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ahLOG/article/details/116202211">【计算机网络】时延带宽积的理解（图解易懂）_GPNU_Log的博客-CSDN博客</a></p>
+<p>时延带宽积&#x3D;传播时延*带宽</p>
+<h4 id="6、往返时间RTT"><a href="#6、往返时间RTT" class="headerlink" title="6、往返时间RTT"></a>6、往返时间RTT</h4><p>是指数据从网络一端传到另一端再收到接收端确认所需的时间。</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/techpedia/1601">什么是往返时间_往返时间简介_往返时间的优势以及应用场景-腾讯云开发者社区 (tencent.com)</a></p>
+<h4 id="7、利用率"><a href="#7、利用率" class="headerlink" title="7、利用率"></a>7、利用率</h4><p>利用率有信道利用率和网络利用率等。信道利用率指出某信道有百分之几的时间是被利用的（有数据通过）。完全空闲的信道利用率是零。网络利用率则是全网络的信道利用率的加权平均值。信道利用率并非越高越好。这是因为，根据排队论的理论，当某信道的利用率增大时，该信道引起的时延也就迅速增加。</p>
+<p><img src="/../../img/image-20230920165926614.png" alt="image-20230920165926614"></p>
+<p><img src="/../../img/image-20230920165944835.png" alt="image-20230920165944835"></p>
+<h3 id="P-40-1-24-试描述具有五层协议的网络体系结构的要点，包括各层的主要功能。"><a href="#P-40-1-24-试描述具有五层协议的网络体系结构的要点，包括各层的主要功能。" class="headerlink" title="P 40 1-24 试描述具有五层协议的网络体系结构的要点，包括各层的主要功能。"></a>P 40 1-24 试描述具有五层协议的网络体系结构的要点，包括各层的主要功能。</h3><p><img src="/../../img/image-20230920170224910.png" alt="image-20230920170224910"></p>
+<p>从实质上，TCP&#x2F;IP只有最上面的三层，因为最下面的链路层并没有属于TCP&#x2F;IP体系的具体协议</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sdwujk160507140150/article/details/79793516">论述具有五层协议的网络体系结构的要点，包括各层的主要功能_论述具有五层协议的网络体系结构的要点，包括各层的主要功能。_爱学习的李冬虎的博客-CSDN博客</a></p>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>物理层要考虑用多大的电压代表“1”或“0”，以及接收方如何识别出发送方的比特。物理层还要确定连接电缆的插头应当有多少根引脚以及各引脚应如何连接。</p>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>在两个相邻结点之间传送数据时，数据链路层将网络层交下来的IP数据报组装成帧，在两个相邻结点的链路上传送帧，每一帧包括数据和必要的控制信息；数据链路层在收到一个帧后，就可以从中提取出数据部分，上交给网络层。</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>网络层负责为分组交换网上的不同主机提供通讯服务，在发送数据时，网络层把运输层产生的报文段或用户数据报封装成分组或包进行传送；选择合适的路由，使源主机运输层所传下来的分组，能够通过网络中的路由器找到目的主机。</p>
+<h4 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h4><p>运输层的任务是负责两台主机中进程之间的通信提供的数据传输服务。应用进程利用该服务传送应用层报文。</p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>应用层是体系结构中最高层。它通过应用进程间的交互来完成特定网络应用。应用层协议定义的是应用进程间通信和交互的规则。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io">Randolf luo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/overview/">http://randolfluo.github.io/2023/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/overview/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://randolfluo.github.io" target="_blank">Randolfluo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="/img/avater.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/01/%E4%BC%A0%E9%80%81%E9%97%A8/" title="传送门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">传送门</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/18/target/target/" title="2023——∞"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2023——∞</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Randolf luo</div><div class="author-info__description">今日事，今日毕</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" href="https://randolfluo.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">不积跬步，无以至千里</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#P-39-1-02-%E8%AF%95%E7%AE%80%E8%BF%B0%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%9A%84%E8%A6%81%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">P 39 1-02 试简述分组交换的要点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">特点：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BD%AC%E5%8F%91"><span class="toc-number">1.1.1.</span> <span class="toc-text">存储转发</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">异步时分复用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.3.</span> <span class="toc-text">差错控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text">流量控制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P-39-1-12-%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E4%B8%A4%E5%A4%A7%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%EF%BC%88%E8%BE%B9%E7%BC%98%E9%83%A8%E5%88%86%E4%B8%8E%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86%EF%BC%89%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%BB%96%E4%BB%AC%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">P 39 1-12 互联网的两大组成部分（边缘部分与核心部分）的特点是什么？他们的工作方式各有什么特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P-39-1-14%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">3.</span> <span class="toc-text">P 39 1-14计算机网络有哪些常用的性能指标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E9%80%9F%E7%8E%87"><span class="toc-number">3.1.</span> <span class="toc-text">1、速率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%B8%A6%E5%AE%BD-%E8%AE%BE%E8%AE%A1%E6%A0%87%E5%87%86"><span class="toc-number">3.2.</span> <span class="toc-text">2、带宽(设计标准)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F%EF%BC%88%E5%AE%9E%E9%99%85%E6%83%85%E5%86%B5%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3、吞吐量（实际情况）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E6%97%B6%E5%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">4、时延</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E6%97%B6%E5%BB%B6%EF%BC%88%E4%BC%A0%E8%BE%93%E6%97%B6%E5%BB%B6%EF%BC%89"><span class="toc-number">3.4.1.</span> <span class="toc-text">发送时延（传输时延）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E6%97%B6%E5%BB%B6"><span class="toc-number">3.4.2.</span> <span class="toc-text">传播时延</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%97%B6%E5%BB%B6"><span class="toc-number">3.4.3.</span> <span class="toc-text">处理时延</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%92%E9%98%9F%E6%97%B6%E5%BB%B6"><span class="toc-number">3.4.4.</span> <span class="toc-text">排队时延</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E6%97%B6%E5%BB%B6-x3D-%E5%8F%91%E9%80%81%E6%97%B6%E5%BB%B6-%E4%BC%A0%E6%92%AD%E6%97%B6%E5%BB%B6-%E5%A4%84%E7%90%86%E6%97%B6%E5%BB%B6-%E6%8E%92%E9%98%9F%E6%97%B6%E5%BB%B6%E3%80%82"><span class="toc-number">3.4.5.</span> <span class="toc-text">总时延&#x3D;发送时延+传播时延+处理时延+排队时延。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E3%80%81%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF%EF%BC%88%E4%BB%A5%E6%AF%94%E7%89%B9%E4%B8%BA%E5%8D%95%E4%BD%8D%E7%9A%84%E9%93%BE%E8%B7%AF%E9%95%BF%E5%BA%A6%EF%BC%89"><span class="toc-number">3.5.</span> <span class="toc-text">5、时延带宽积（以比特为单位的链路长度）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E3%80%81%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4RTT"><span class="toc-number">3.6.</span> <span class="toc-text">6、往返时间RTT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%E3%80%81%E5%88%A9%E7%94%A8%E7%8E%87"><span class="toc-number">3.7.</span> <span class="toc-text">7、利用率</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P-40-1-24-%E8%AF%95%E6%8F%8F%E8%BF%B0%E5%85%B7%E6%9C%89%E4%BA%94%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E8%A6%81%E7%82%B9%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%90%84%E5%B1%82%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD%E3%80%82"><span class="toc-number">4.</span> <span class="toc-text">P 40 1-24 试描述具有五层协议的网络体系结构的要点，包括各层的主要功能。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">4.1.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">4.2.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">4.3.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%BE%93%E5%B1%82"><span class="toc-number">4.4.</span> <span class="toc-text">运输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">4.5.</span> <span class="toc-text">应用层</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/08/pwn/%E5%9F%BA%E7%A1%80rop/" title="基本ROP">基本ROP</a><time datetime="2023-12-07T16:00:00.000Z" title="发表于 2023-12-08 00:00:00">2023-12-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/csapp/attacklab/" title="attacklab">attacklab</a><time datetime="2023-12-07T14:42:00.000Z" title="发表于 2023-12-07 22:42:00">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/03/csapp/bomblab/" title="bomblab">bomblab</a><time datetime="2023-12-03T14:42:00.000Z" title="发表于 2023-12-03 22:42:00">2023-12-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/24/re/SWPUCTF%202021%20%E6%96%B0%E7%94%9F%E8%B5%9B-%E8%80%81%E9%BC%A0%E8%B5%B0%E8%BF%B7%E5%AE%AB/" title="SWPUCTF 2021 新生赛-老鼠走迷宫">SWPUCTF 2021 新生赛-老鼠走迷宫</a><time datetime="2023-11-24T09:42:00.000Z" title="发表于 2023-11-24 17:42:00">2023-11-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/19/buuctf_re_WP/wp/" title="buuctf_wp1">buuctf_wp1</a><time datetime="2023-11-19T09:42:00.000Z" title="发表于 2023-11-19 17:42:00">2023-11-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Just_do_It</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '45kB6k1g9iOo6PmOE7v95Ehi-gzGzoHsz',
+      appKey: 'ClOjBXwtktzWrj8OY4cEJJcF',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
