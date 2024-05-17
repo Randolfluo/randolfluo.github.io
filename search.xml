@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2024/05/17/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/"/>
-      <url>/2024/05/17/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Python数据分析与展示0x1"><a href="#Python数据分析与展示0x1" class="headerlink" title="Python数据分析与展示0x1"></a>Python数据分析与展示0x1</h1><p>[toc]</p><p>为科学计算和数据科学设计的Python发行版：<code>Canopy</code>和<code>Anaconda</code></p><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h3 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h3><ul><li><p>包管理：<code>Conda</code>类似于<code>pip</code></p></li><li><p><code>spyder</code>：交互式Python语言开发环境</p></li><li><code>IPython</code>是一个用于交互式计算的Python工具<ul><li><code>a?</code>获得a的信息</li><li><code>%</code>魔术命令（Magic Commands）是特殊的命令,如<code>%run demo.py</code>执行当前目录下的demo.py。</li></ul></li></ul><h3 id="NumPy库入门"><a href="#NumPy库入门" class="headerlink" title="NumPy库入门"></a>NumPy库入门</h3><p>NumPy是一个开源的Python科学计算基础库，包含：</p><ul><li>一个强大的N维数组对象ndarray</li><li>广播功能函数</li><li>整合C/C++/Fortran代码的工具</li><li>线性代数 、傅里叶变换、随机数生成等功能<br>NumPy是SciPy、Pandas等数据处理或科学计算库的基础</li></ul><h4 id="数据的维度"><a href="#数据的维度" class="headerlink" title="数据的维度"></a>数据的维度</h4><div class="table-container"><table><thead><tr><th>维度</th><th>定义</th><th>表示方式</th></tr></thead><tbody><tr><td>一维数据</td><td>一维数据由对等关系的有序或无序数据构成，采用线性方式组织</td><td>列表和集合类型</td></tr><tr><td>二维数据</td><td>二维数据由多个一维数据构成，是一维数据的组合形式</td><td>列表类型</td></tr><tr><td>多维数据</td><td>多维数据由一维或二维数据在新维度上扩展形成(如大学排名随年份变化，即时间维度)</td><td>列表类型</td></tr><tr><td>高维数据</td><td>高维数据仅利用最基本的二元关系展示数据间的复杂结构(如键值对)</td><td>字典类型或JSON、XML和YAML格式</td></tr></tbody></table></div><p>Python中列表和NumPy数组的一些主要区别：</p><ul><li>列表是动态的，可以包含不同类型的元素（如整数、浮点数、字符串等）。</li><li>NumPy数组是静态的，通常所有元素都是相同类型的（例如，都是整数或都是浮点数）。</li></ul><h4 id="ndarray"><a href="#ndarray" class="headerlink" title="ndarray"></a>ndarray</h4>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>洛谷题单0x2——字符串</title>
       <link href="/2024/05/13/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
       <url>/2024/05/13/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
