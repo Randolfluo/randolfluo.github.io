@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2024/05/17/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/"/>
+      <url>/2024/05/17/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/</url>
+      
+        <content type="html"><![CDATA[<p>为科学计算和数据科学设计的Python发行版：<code>Canopy</code>和<code>Anaconda</code></p><h3 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h3><ul><li><p>包管理：<code>Conda</code>类似于<code>pip</code></p></li><li><p><code>spyder</code>：交互式Python语言开发环境</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>洛谷题单0x2——字符串</title>
       <link href="/2024/05/13/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
       <url>/2024/05/13/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
@@ -391,6 +404,8 @@
       
       <categories>
           
+          <category> python </category>
+          
           <category> 爬虫 </category>
           
       </categories>
@@ -467,6 +482,8 @@
       
       
       <categories>
+          
+          <category> python </category>
           
           <category> 爬虫 </category>
           
