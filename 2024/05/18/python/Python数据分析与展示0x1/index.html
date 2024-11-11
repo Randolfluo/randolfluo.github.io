@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>python数据分析0x1 | Randolfluo's blog</title><meta name="author" content="Randolf luo"><meta name="copyright" content="Randolf luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="北京理工大学 python数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python数据分析0x1">
+<meta property="og:url" content="http://randolfluo.github.io/2024/05/18/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/index.html">
+<meta property="og:site_name" content="Randolfluo&#39;s blog">
+<meta property="og:description" content="北京理工大学 python数据分析">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://randolfluo.github.io/img/cover1.jpg">
+<meta property="article:published_time" content="2024-05-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-11T16:00:00.000Z">
+<meta property="article:author" content="Randolf luo">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="数据分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://randolfluo.github.io/img/cover1.jpg"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/2024/05/18/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Randolf luo","link":"链接: ","source":"来源: Randolfluo's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python数据分析0x1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cover1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Randolfluo's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">python数据分析0x1</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">python数据分析0x1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-17T16:00:00.000Z" title="发表于 2024-05-18 00:00:00">2024-05-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-11T16:00:00.000Z" title="更新于 2024-07-12 00:00:00">2024-07-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>为科学计算和数据科学设计的Python发行版：<code>Canopy</code>和<code>Anaconda</code></p>
+<h3 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h3><ul>
+<li><p>包管理：<code>Conda</code>类似于<code>pip</code></p>
+</li>
+<li><p><code>spyder</code>：交互式Python语言开发环境</p>
+</li>
+<li><code>IPython</code>是一个用于交互式计算的Python工具<ul>
+<li><code>a?</code>获得a的信息</li>
+<li><code>%</code>魔术命令（Magic Commands）是特殊的命令,如<code>%run demo.py</code>执行当前目录下的demo.py。</li>
+</ul>
+</li>
+</ul>
+<h3 id="NumPy库入门"><a href="#NumPy库入门" class="headerlink" title="NumPy库入门"></a>NumPy库入门</h3><p>NumPy是一个开源的Python科学计算基础库，包含：</p>
+<ul>
+<li>一个强大的N维数组对象ndarray</li>
+<li>广播功能函数</li>
+<li>整合C/C++/Fortran代码的工具</li>
+<li>线性代数 、傅里叶变换、随机数生成等功能<br>NumPy是SciPy、Pandas等数据处理或科学计算库的基础</li>
+</ul>
+<h4 id="数据的维度"><a href="#数据的维度" class="headerlink" title="数据的维度"></a>数据的维度</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>定义</th>
+<th>表示方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一维数据</td>
+<td>一维数据由对等关系的有序或无序数据构成，采用线性方式组织</td>
+<td>列表和集合类型</td>
+</tr>
+<tr>
+<td>二维数据</td>
+<td>二维数据由多个一维数据构成，是一维数据的组合形式</td>
+<td>列表类型</td>
+</tr>
+<tr>
+<td>多维数据</td>
+<td>多维数据由一维或二维数据在新维度上扩展形成(如大学排名随年份变化，即时间维度)</td>
+<td>列表类型</td>
+</tr>
+<tr>
+<td>高维数据</td>
+<td>高维数据仅利用最基本的二元关系展示数据间的复杂结构(如键值对)</td>
+<td>字典类型或JSON、XML和YAML格式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Python中列表和NumPy数组的一些主要区别：</p>
+<ul>
+<li>列表是动态的，可以包含不同类型的元素（如整数、浮点数、字符串等）。</li>
+<li>NumPy数组是静态的，通常所有元素都是相同类型的（例如，都是整数或都是浮点数）。</li>
+</ul>
+<h4 id="ndarray"><a href="#ndarray" class="headerlink" title="ndarray"></a>ndarray</h4><ul>
+<li><code>ndarry</code>更适合计算。</li>
+<li>由数据+元数据（数据维度、数据类型）</li>
+<li>轴（axis）：保存数据的维度</li>
+<li>秩（rank）：轴的数量</li>
+</ul>
+<p><img src="https://randolfluo.oss-cn-guangzhou.aliyuncs.com/img/image-20240519222508219.png" alt="image-20240519222508219"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,],[<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>]])</span><br><span class="line"></span><br><span class="line">a.ndim</span><br><span class="line">Out[<span class="number">4</span>]: <span class="number">2</span></span><br><span class="line"></span><br><span class="line">a.shape</span><br><span class="line">Out[<span class="number">5</span>]: (<span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">a.size</span><br><span class="line">Out[<span class="number">6</span>]: <span class="number">10</span></span><br><span class="line"></span><br><span class="line">a.dtype</span><br><span class="line">Out[<span class="number">7</span>]: dtype(<span class="string">&#x27;int32&#x27;</span>)</span><br><span class="line"></span><br><span class="line">a.itemsize</span><br><span class="line">Out[<span class="number">8</span>]: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>避免使用非同质对象如<code>([[0,1,2,3,4,],[9,8,7,6]])</code></li>
+</ul>
+<h4 id="ndarray数组创建"><a href="#ndarray数组创建" class="headerlink" title="ndarray数组创建"></a>ndarray数组创建</h4><p><img src="https://randolfluo.oss-cn-guangzhou.aliyuncs.com/img/image-20240519224334598.png" alt="image-20240519224334598"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">np.arange(<span class="number">10</span>)</span><br><span class="line">Out[<span class="number">10</span>]: array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line">np.ones((<span class="number">3</span>,<span class="number">6</span>))</span><br><span class="line">Out[<span class="number">11</span>]: </span><br><span class="line">array([[<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">       [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">       [<span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>, <span class="number">1.</span>]])</span><br><span class="line"></span><br><span class="line">np.zeros((<span class="number">3</span>,<span class="number">6</span>), dtype = np.int32)</span><br><span class="line">Out[<span class="number">12</span>]: </span><br><span class="line">array([[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line">np.eye(<span class="number">5</span>)</span><br><span class="line">Out[<span class="number">13</span>]: </span><br><span class="line">array([[<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>]])</span><br><span class="line"></span><br><span class="line">x = np.ones((<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line">[[[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line">  [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line">  [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"> [[<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line">  [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]</span><br><span class="line">  [<span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span> <span class="number">1.</span>]]]</span><br><span class="line"></span><br><span class="line">x.shape</span><br><span class="line">Out[<span class="number">18</span>]: (<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://randolfluo.oss-cn-guangzhou.aliyuncs.com/img/image-20240519225953543.png" alt="image-20240519225953543"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = np.linspace(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">a</span><br><span class="line">Out[<span class="number">20</span>]: array([ <span class="number">1.</span>,  <span class="number">4.</span>,  <span class="number">7.</span>, <span class="number">10.</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = np.linspace(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>,endpoint = <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">b</span><br><span class="line">Out[<span class="number">23</span>]: array([<span class="number">1.</span>  , <span class="number">3.25</span>, <span class="number">5.5</span> , <span class="number">7.75</span>])</span><br><span class="line"></span><br><span class="line">c = np.concatenate((a, b)) <span class="comment">#要作为一个整体参数</span></span><br><span class="line"></span><br><span class="line">c</span><br><span class="line">Out[<span class="number">37</span>]: array([ <span class="number">1.</span>  ,  <span class="number">4.</span>  ,  <span class="number">7.</span>  , <span class="number">10.</span>  ,  <span class="number">1.</span>  ,  <span class="number">3.25</span>,  <span class="number">5.5</span> ,  <span class="number">7.75</span>])	</span><br></pre></td></tr></table></figure>
+<p><img src="https://randolfluo.oss-cn-guangzhou.aliyuncs.com/img/image-20240519230435732.png" alt="image-20240519230435732"></p>
+<h3 id="ndarray数组的操作"><a href="#ndarray数组的操作" class="headerlink" title="ndarray数组的操作"></a>ndarray数组的操作</h3><ul>
+<li>索引和切片和python相同</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = np.arange(<span class="number">24</span>).reshape((<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line">a</span><br><span class="line">Out[<span class="number">39</span>]: </span><br><span class="line">array([[[ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">        [ <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">        [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>],</span><br><span class="line">        [<span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>]]])</span><br><span class="line"></span><br><span class="line">a[-<span class="number">1</span>,-<span class="number">2</span>,-<span class="number">3</span>]</span><br><span class="line">Out[<span class="number">40</span>]: <span class="number">17</span></span><br><span class="line"></span><br><span class="line">a[:,<span class="number">1</span>,-<span class="number">3</span>]</span><br><span class="line">Out[<span class="number">41</span>]: array([ <span class="number">5</span>, <span class="number">17</span>])</span><br><span class="line"></span><br><span class="line">a[:,<span class="number">1</span>:<span class="number">3</span>,:]		<span class="comment">#切片范围1，2。不包括3</span></span><br><span class="line">Out[<span class="number">42</span>]: </span><br><span class="line">array([[[ <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">        [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>],</span><br><span class="line">        [<span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>]]])</span><br><span class="line"></span><br><span class="line">a[:,:,::<span class="number">2</span>]		<span class="comment">#跳跃切片</span></span><br><span class="line">Out[<span class="number">43</span>]: </span><br><span class="line">array([[[ <span class="number">0</span>,  <span class="number">2</span>],</span><br><span class="line">        [ <span class="number">4</span>,  <span class="number">6</span>],</span><br><span class="line">        [ <span class="number">8</span>, <span class="number">10</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="number">12</span>, <span class="number">14</span>],</span><br><span class="line">        [<span class="number">16</span>, <span class="number">18</span>],</span><br><span class="line">        [<span class="number">20</span>, <span class="number">22</span>]]])</span><br></pre></td></tr></table></figure>
+<h4 id="ndarray的运算"><a href="#ndarray的运算" class="headerlink" title="ndarray的运算"></a>ndarray的运算</h4><p>各种函数……</p>
+<h3 id="NumPy数据的存取"><a href="#NumPy数据的存取" class="headerlink" title="NumPy数据的存取"></a>NumPy数据的存取</h3><h4 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h4><ul>
+<li><code>CSV（Comma-Separated Values，逗号分隔值）文件</code>是一种常见的文本文件格式，用于存储表格数据。</li>
+</ul>
+<p>存储一维和二维数据：</p>
+<ul>
+<li><p><code>a = np.arange(100).reshape(5,20)</code></p>
+</li>
+<li><p><code>np.savetxt(&#39;a.csv&#39;,a,fmt=&#39;%d&#39;,delimiter  = &#39;,&#39;)</code>存储csv文件</p>
+</li>
+<li><code>np.b = np.loadtxt(&#39;a.csv&#39;,delimiter = &#39;,&#39;)</code>加载csv文件</li>
+</ul>
+<p>存储多维数据：</p>
+<ul>
+<li><p>我们需要将文件转化为对应的格式，即知道对应维度</p>
+</li>
+<li><p><code>a = np.arange(100).reshape(5,10,2)</code></p>
+</li>
+<li><p><code>a.tofile(&quot;b.dat&quot;,sep=&quot;,&quot;,format = &#39;%d&#39;)</code>存储csv文件</p>
+</li>
+<li><p><code>c = np.fromfile(&quot;b.dat&quot;,dtype = np.int32, sep=&#39;,&#39;).reshape(5,10,2)</code>加载csv文件</p>
+</li>
+</ul>
+<p>使用npy文件存储：</p>
+<ul>
+<li><p>通过文件里包含维度信息来实现</p>
+</li>
+<li><p><code>np.save(&quot;a.npy&quot;,a)</code>存储npy文件</p>
+</li>
+<li><code>b = np.load(&quot;a.npy&quot;)</code>存储npy文件</li>
+</ul>
+<h4 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h4><p>通过np.random生成</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io">Randolf luo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io/2024/05/18/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/">http://randolfluo.github.io/2024/05/18/python/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%B1%95%E7%A4%BA0x1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://randolfluo.github.io" target="_blank">Randolfluo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a></div><div class="post-share"><div class="social-share" data-image="/img/cover1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/05/15/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划"><img class="cover" src="/img/cover3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">动态规划</div></div><div class="info-2"><div class="info-item-1">动态规划递归关系  状态表示f[i,j] 集合：从前i个物品选且体积小于j  属性：最大值，最小代价，数量     状态计算——集合划分  01 背包 每件物品可以用一次  不包含第i个物品：f(i - 1, j)  包含第i个物品：f(i - 1,j - vi) + wi  空余一个vi的位置，加上第i个物品的权重   1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include &lt;algorithm&gt;#include &lt;iostream&gt;using namespace std;const int N = 1010;int n, m;int v[N], w[N]; //体积和价值int f[N][N]; //第一个N表示取第1~n个物品，第二个n表示从1开始到m的容量int main() &#123;  cin &gt;&gt; n &gt;&gt; m;  for (int i = 1; i &lt;= n; i++)   ...</div></div></div></a><a class="pagination-related" href="/2024/05/24/others/%E7%BD%91%E5%AE%89%E8%AF%BE%E8%AE%BE/" title="栈溢出攻击原理与防范"><img class="cover" src="/img/cover3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">栈溢出攻击原理与防范</div></div><div class="info-2"><div class="info-item-1">栈溢出攻击原理与防范栈溢出（又名stack overflow），指的是程序向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，因而导致与其相邻的栈中的变量的值被改变。这种问题是一种特定的缓冲区溢出漏洞，类似的还有堆溢出，bss 段溢出等溢出方式。栈溢出漏洞轻则可以使程序崩溃，重则可以使攻击者控制程序执行流程。 [toc] 为什么栈溢出如此知名 莫里斯蠕虫  莫里斯蠕虫病毒利用了栈溢出漏洞 莫里斯蠕虫（Morris Worm）是在1988年11月2日由罗伯特·泰潘·莫里斯（Robert Tappan Morris）编写的一个计算机蠕虫。导致数千台计算机瘫痪，造成了大量的时间和金钱损失。他也是第一个因计算机犯罪而被判有罪的人。   stack overflow 论坛logo：全球知名的程序员论坛     漏洞发现至今已有35年，缓冲区溢出漏洞仍占比最多：   demo什么是栈溢出，请看如下demo： 12345678910#include&lt;stdio.h&gt;int main()&#123;    char s[10];    gets(s);    ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/11/19/re/2020%E8%99%8E%E7%AC%A6%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E8%B5%9B%E9%81%93-Re-game/" title="2020-虎符网络安全赛道-Re-game"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-19</div><div class="info-item-2">2020-虎符网络安全赛道-Re-game</div></div><div class="info-2"><div class="info-item-1">题目链接https://pan.baidu.com/s/1Rq4lJmANHSL1EKk8AZxqDw?pwd=0422  下载下来是一个txt文件，直接人工逆向分析。 初始化及flag判断 前面容易看出初始化了三个列表arr0、arr1和arr2，python版本为2.7 123arr0 = [249, 91, 149, 113, 16, 91, 53, 41]arr1 = [43, 1, 6, 69, 20, 62, 6, 44, 24, 113, 6, 35, 0, 3, 6, 44, 20, 22, 127, 60]arr2 = [90, 100, 87, 109, 86, 108, 86, 105, 90, 104, 88, 102]  先声明四个check函数，然后是校验flag。由于每一次返回FALSE都是跳转到239偏移地址，flag错误。因此可以判断出四个check间是&amp;的关系。 123456flag = input()if check0(flag) &amp; check1(flag) &amp; check2(flag) &amp;...</div></div></div></a><a class="pagination-related" href="/2023/11/24/re/SWPUCTF%202021%20%E6%96%B0%E7%94%9F%E8%B5%9B-%E8%80%81%E9%BC%A0%E8%B5%B0%E8%BF%B7%E5%AE%AB/" title="SWPUCTF 2021 新生赛-老鼠走迷宫"><img class="cover" src="/img/cover3.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-24</div><div class="info-item-2">SWPUCTF 2021 新生赛-老鼠走迷宫</div></div><div class="info-2"><div class="info-item-1">​    在看雪学苑看到了一题py逆向，正好最近在学习，遂拿来做。 题目链接https://pan.baidu.com/s/1Rq4lJmANHSL1EKk8AZxqDw?pwd=0422  首先拿到一个附件，没有后缀 将其拖入010Editor查看文件头，发现其为4D5A开头，为windowsPE文件的MS-DOS 头，将文件后缀修改为PE文件的可执行系列.exe    ** 可以通过该文件图标特征判断该文件为PyInstaller打包的文件，也可以通过Exeinfo PE来查看文件提示，推荐查看 python打包的二进制文件反编译 - Hk_Mayfly - 博客园 (cnblogs.com)博客里也有一个pwn题  打开exe程序发现是一道迷宫题，flag是用wasd表示的最短路径的md5值。 反编译成py文件我们先把pyinstxtractor.py复制到exe文件同一目录,执行命令  1&gt;python pyinstxtractor.py...</div></div></div></a><a class="pagination-related" href="/2024/07/25/python/ACjudge0x1/" title="ACjudge0x1"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-25</div><div class="info-item-2">ACjudge0x1</div></div><div class="info-2"><div class="info-item-1">ACjudge0x1在打算法题的时候，我通常使用wsl2+vscode的组合（感觉默认cpp提示太烂了，vs过于臃肿），当我们完成一道题目时，通常要使用g++编译，然后用cv大法查看是否ac。可是，在debug时，重复的动作过于痛苦，且难以区分输入输出。因此可以使用linux命令来解决这一问题。 1g++ &#123;path&#125;  &amp;&amp; ./a.out &lt; input.txt &gt; output.txt &amp;&amp; diff output.txt answer.txt -y 我们当然可以写入python脚本（其实shell脚本更简洁），并加上初始化功能（- i） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#!/usr/bin/env python3import osimport...</div></div></div></a><a class="pagination-related" href="/2024/04/12/python/Python%E7%88%AC%E8%99%AB/" title="python爬虫0x1"><img class="cover" src="/img/cover1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-12</div><div class="info-item-2">python爬虫0x1</div></div><div class="info-2"><div class="info-item-1">Python爬虫[toc] request库123456789101112131415import requestsr = requests.get(&quot;https://www.icourse163.org&quot;)print(r.status_code)		#状态码200，访问成功print(type(r))  #&lt;class &#x27;requests.models.Response&#x27;&gt;#编码方式print(r.encoding)       #charset字段获得，不存在默认为ISO-8859-1print(r.apparent_encoding)  #备选编码，通过分析内容推断出编码r.encoding = &#x27;utf-8&#x27;		#设置编码print(r.text)		#html内容print(r.headers)	#http请求头print(r.content)       ...</div></div></div></a><a class="pagination-related" href="/2024/04/13/python/Python%E7%88%AC%E8%99%AB0x2/" title="python爬虫0x2"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-13</div><div class="info-item-2">python爬虫0x2</div></div><div class="info-2"><div class="info-item-1">Python爬虫[toc] 正则表达式语法该表格可能出现显示错误，建议直接看课件     操作符 说明 实例     . 表示任何单个字符    [] 字符集，对单个字符给出取值范围 [abc]表示a、b、c，[a‐z]表示a到z单个字符     非字符集，对单个字符给出排除范围 abc表示非a或b或c的单个字符   * 前一个字符0次或无限次扩展 abc* 表示ab、abc、abcc、abccc等   + 前一个字符1次或无限次扩展 abc+ 表示abc、abcc、abccc等   ? ? 前一个字符0次或1次扩展 abc? 表示ab、abc   \  左右表达式任意一个abc def...</div></div></div></a><a class="pagination-related" href="/2023/10/18/python/py%E9%80%86%E5%90%91/" title="python逆向"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-18</div><div class="info-item-2">python逆向</div></div><div class="info-2"><div class="info-item-1">pythonpython是一门解释性的语言  源代码—&gt;中间代码—&gt;机器语言  编译器先将源代码编译成虚拟机指令，再由解释器对中间代码进行解释。 python有两种常见的解释器： CPython：C语言开发，使用最广，默认的解释器 PyPy：采用JIT技术，对python代码进行动态编译，追求执行速度 Python 字节码与字节码混淆 - 简书 (jianshu.com)关于python字节码的知识 深入理解python之Opcode备忘录 - 简书 (jianshu.com)这个博客里有关于字节码指令的详细解释 pyc文件 pyc是编译py后生成的字节码文件，可以用来隐藏源代码。pyc内容跟python 版本有关。 不同版本的python可能运行不了同一个pyc文件。 12python -m py_compile test.py#反编译pyc文件  学习python字节码学习搭配chatGPT，能提高学习效率  CPython使用基于堆栈的虚拟机 在执行python文件时候，第一步: python解释器会将你写的python代码先编译为字节码第二步:...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Randolf luo</div><div class="author-info-description">今日事，今日毕</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Anaconda"><span class="toc-number">1.</span> <span class="toc-text">Anaconda</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NumPy%E5%BA%93%E5%85%A5%E9%97%A8"><span class="toc-number">2.</span> <span class="toc-text">NumPy库入门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BB%B4%E5%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">数据的维度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ndarray"><span class="toc-number">2.2.</span> <span class="toc-text">ndarray</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ndarray%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.3.</span> <span class="toc-text">ndarray数组创建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">ndarray数组的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ndarray%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.</span> <span class="toc-text">ndarray的运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NumPy%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%8F%96"><span class="toc-number">4.</span> <span class="toc-text">NumPy数据的存取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8"><span class="toc-number">4.1.</span> <span class="toc-text">存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">随机数</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/daily%20record/20241111/" title="记一次2024ICPC杭州站"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次2024ICPC杭州站"/></a><div class="content"><a class="title" href="/2024/11/11/daily%20record/20241111/" title="记一次2024ICPC杭州站">记一次2024ICPC杭州站</a><time datetime="2024-11-11T09:42:00.000Z" title="发表于 2024-11-11 17:42:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/15/math/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="无标题"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/10/15/math/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="无标题">无标题</a><time datetime="2024-10-15T06:44:44.734Z" title="发表于 2024-10-15 14:44:44">2024-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/29/potato_clock/v0.01/" title="无标题"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/09/29/potato_clock/v0.01/" title="无标题">无标题</a><time datetime="2024-09-29T06:08:49.443Z" title="发表于 2024-09-29 14:08:49">2024-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/26/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%840x2/" title="无标题"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/09/26/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%840x2/" title="无标题">无标题</a><time datetime="2024-09-26T12:40:48.042Z" title="发表于 2024-09-26 20:40:48">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/26/pr/pr%E5%85%A5%E9%97%A8/" title="无标题"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/09/26/pr/pr%E5%85%A5%E9%97%A8/" title="无标题">无标题</a><time datetime="2024-09-26T12:40:47.924Z" title="发表于 2024-09-26 20:40:47">2024-09-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/cover1.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Randolfluo's blog - 今日事，今日毕</title><meta name="author" content="Randolf luo"><meta name="copyright" content="Randolf luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="今日事，今日毕">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Randolfluo&#39;s blog">
+<meta property="og:url" content="http://randolfluo.github.io/page/4/index.html">
+<meta property="og:site_name" content="Randolfluo&#39;s blog">
+<meta property="og:description" content="今日事，今日毕">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://randolfluo.github.io/img/avater.jpg">
+<meta property="article:author" content="Randolf luo">
+<meta property="article:tag" content="Randolf luo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://randolfluo.github.io/img/avater.jpg"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/page/4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Randolf luo","link":"链接: ","source":"来源: Randolfluo's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Randolfluo\'s blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Randolfluo's blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Randolfluo's blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/17/%E6%A0%A1%E8%B5%9B/2024_7_17/" title="2024_7_17暑期集训"><img class="post-bg" src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2024_7_17暑期集训"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/17/%E6%A0%A1%E8%B5%9B/2024_7_17/" title="2024_7_17暑期集训">2024_7_17暑期集训</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T16:00:00.000Z" title="发表于 2024-07-17 00:00:00">2024-07-17</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-16T16:00:00.000Z" title="更新于 2024-07-17 00:00:00">2024-07-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/">暑期集训</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/">暑期集训</a></span></div><div class="content">序言还得是黄神！比赛直接AC四题！挽救了我们队！ 2488: Reposts 这题有点像食物链，即第二人转发消息（repost）到第一个人，再以此类推。要求求最大的传播链长度，由于我们不需要考虑该网民不知道消息转发的情况。因此可以采用队列来存储传递信息，用map存储食物链 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;queue&gt;#include &lt;string&gt;#include &lt;unordered_map&gt;    #include &lt;utility&gt;    //pairusing namespace std;typedef pair&lt;string, string&gt; PII;   //二元组queue&lt;PII&gt;...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/12/OS/xv6_0x9/" title="XV6 0x9"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XV6 0x9"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/12/OS/xv6_0x9/" title="XV6 0x9">XV6 0x9</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-12T14:42:00.000Z" title="发表于 2024-07-12 22:42:00">2024-07-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-20T16:00:00.000Z" title="更新于 2024-07-21 00:00:00">2024-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/">OS</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/xv6/">xv6</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xv6/">xv6</a></span></div><div class="content">lab9文件系统文件系统API  文件描述符必须与文件名无关（修改文件名后仍然可以通过文件描述符操作文件）  记录offset（当前读写位置）  友好的文件名  在用户/进程间共享文件  持久性  inode满足以下两种条件时可以删除文件  link count == 0 open fd count ==...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/12/codeforce/2024_7_11/" title="Codeforces Round 957 (Div. 3)"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Codeforces Round 957 (Div. 3)"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/12/codeforce/2024_7_11/" title="Codeforces Round 957 (Div. 3)">Codeforces Round 957 (Div. 3)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-11T16:00:00.000Z" title="发表于 2024-07-12 00:00:00">2024-07-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-11T16:00:00.000Z" title="更新于 2024-07-12 00:00:00">2024-07-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/codeforces/">codeforces</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/codeforces/">codeforces</a></span></div><div class="content">A 题目大意是对输入的a,b,c三个数，每个数可以自增，但是总自增值不得大于5。求$abc$的最大值。 这题直接使用暴力做法 1234567891011121314151617181920212223242526272829#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;int num[3][1005];int main() &#123;    int n;    cin &gt;&gt; n;    for (int i = 0; i &lt; n; i++) &#123;        cin &gt;&gt; num[0][i] &gt;&gt; num[1][i] &gt;&gt; num[2][i];    &#125;    for (int i = 0; i &lt; n; i++) &#123;        int maxnum = 0;        for (int a = 0; a &lt;= 5; a++) &#123;            for (int...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/11/%E6%A0%A1%E8%B5%9B/2024_7_11/" title="2024_7_11暑期集训"><img class="post-bg" src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2024_7_11暑期集训"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/11/%E6%A0%A1%E8%B5%9B/2024_7_11/" title="2024_7_11暑期集训">2024_7_11暑期集训</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T16:00:00.000Z" title="发表于 2024-07-11 00:00:00">2024-07-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-11T16:00:00.000Z" title="更新于 2024-07-12 00:00:00">2024-07-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/">暑期集训</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/algorithm/">algorithm</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/">暑期集训</a></span></div><div class="content">3900: 两袋面包 我们只需要按照题意解出即可。 12345678910111213141516171819202122#include &lt;iostream&gt;using namespace std;#define int long longsigned main() &#123;  int y, k, n;  while (cin &gt;&gt; y &gt;&gt; k &gt;&gt; n) &#123;    bool flag = false;    for (int i = 1; i &lt; n - y; i++) &#123;      if ((i + y) % k == 0) &#123;        flag = true;        cout &lt;&lt; i &lt;&lt; &quot; &quot;;      &#125;    &#125;    if (!flag)      cout &lt;&lt; &quot;-1&quot; &lt;&lt; endl;    else      cout &lt;&lt;...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/10/OS/xv6_0x8/" title="XV6 0x8"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XV6 0x8"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/10/OS/xv6_0x8/" title="XV6 0x8">XV6 0x8</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T14:42:00.000Z" title="发表于 2024-07-10 22:42:00">2024-07-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-19T16:00:00.000Z" title="更新于 2024-07-20 00:00:00">2024-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/">OS</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/xv6/">xv6</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xv6/">xv6</a></span></div><div class="content">lab8多进程coordination   ——sleep/wake  pipes disk read wait  broken sleep：在无锁状态下，中断处理提前调用了 wakeup(void *chan)，当 sleep(void* chan, struct spinlock *lk) 执行时，wakeup(void *chan) 已经执行完毕，导致进程持续睡眠。因此sleep(void* chan, struct spinlock *lk)是原子的，在释放锁的同时将进程睡眠。 进程结束，父进程为什么要wait：  因为子进程无法释放自己的堆栈。 父进程可以获取子进程的退出码，并根据退出码决定接下来的操作。例如，如果子进程出现错误，父进程可能需要重新启动子进程或执行一些错误处理逻辑。 方便进行进程同步  Memory allocator(moderate)我们将内存分配器的锁分配给每个CPU，同时，初始化锁。 12345678910111213141516struct &#123;  struct spinlock lock;  struct run...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/08/OS/xv6_0x7/" title="XV6 0x7"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XV6 0x7"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/08/OS/xv6_0x7/" title="XV6 0x7">XV6 0x7</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-08T14:42:00.000Z" title="发表于 2024-07-08 22:42:00">2024-07-08</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-19T16:00:00.000Z" title="更新于 2024-07-20 00:00:00">2024-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/">OS</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/xv6/">xv6</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xv6/">xv6</a></span></div><div class="content">lab7mutex锁的好处：  锁可以避免更新丢失 使多步操作成为原子操作  锁帮助维护不变量  错误使用锁的问题：  死锁（deadlock）        ——改用顺序获取释放锁  模块化（modularity）         性能（performance）      ——拆分数据结构  锁实现：  通过硬件实现锁获取的原子性 关闭中断，例如当线程获取锁进入临界区，在临界区产生中断，而中断处理程序也需要获取该，从而产生死锁  _sync_lock_test_and_set 是 GNU Compiler Collection (GCC) 提供的一种原子操作函数 123456789101112acquire：while(_sync_lock_test_and_set(&amp;lk_&gt;locked, 1) != 0)    ;在locked原子地写入1，但是返回之前的值，若之前的值等于0（没人拿到过锁），代表该进程成功获得锁，退出循环__sync_synchronize();...   ...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/06/OS/xv6_0x6/" title="XV6 0x6"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XV6 0x6"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/06/OS/xv6_0x6/" title="XV6 0x6">XV6 0x6</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-06T14:42:00.000Z" title="发表于 2024-07-06 22:42:00">2024-07-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-11T16:00:00.000Z" title="更新于 2024-07-12 00:00:00">2024-07-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/">OS</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/xv6/">xv6</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xv6/">xv6</a></span></div><div class="content">lab6interrupt 先设置初始化中断，在每个cpu运行进程时启用该cpu的中断。当需要向设备写入或读取数据时，调用函数判断该是否有缓冲区写入数据，如果有，则发生数据；如果没有，则该进程休眠，进行上下文切换，执行其他进程。  cpu接受到中断，由用户模式切换为监督者模式，进入usertrap()函数，判断为哪类中断。跳转到对应中断处理函数。  对于以太网等能以极高频率产生中断的程序（极大的中断开销），通常采用轮询（polling）的方式来处理中断。   Implement copy-on write (hard）太菜了没能搞成实验，搞了很久还是不行，内核编程太痛苦了。有时间把这个补充以下。 //TODO 总结一下原因：  将重复、可明确区分的操作划分为函数操作，方便调试和区分。 增加动手前的思考时间，减少中途的改动。 要有耐心。  </div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/04/OS/xv6_0x5/" title="XV6 0x5"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XV6 0x5"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/04/OS/xv6_0x5/" title="XV6 0x5">XV6 0x5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-04T14:42:00.000Z" title="发表于 2024-07-04 22:42:00">2024-07-04</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-19T16:00:00.000Z" title="更新于 2024-07-20 00:00:00">2024-07-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/">OS</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/xv6/">xv6</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xv6/">xv6</a></span></div><div class="content">lab521年后的lab删除了该lab 内存分配 急分配：当进程请求内存时，操作系统立即为其分配内存。 懒分配：当进程请求内存时，操作系统不会立即为其分配内存，而是等待内存被释放后再为其分配。  COPY-ON-WRITE(COW)  —FORK    牛叉：当一个进程创建另一个进程的副本时，新进程会开始时共享父进程的内存页。只有在这些页被写入时，才会复制这些页。  Demand page：当进程请求一个不存在的页面时，操作系统会将其加载到内存中。  least-recently-used（LRU）：LRU是一种页面替换算法，它根据页面最近被访问的时间来决定哪个页面应该被替换。  PTE_A   的作用：可用于时钟算法  memory-mapped-file：mmap系统调用   Eliminate allocation from sbrk() (easy)老师已经在lecture上讲了,所以完成的比较轻松。 首先我们修改sys_sbrk()函数，只修改sz大小，将内存分配交给中断！ 1234567891011uint64sys_sbrk(void)&#123;  int...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/02/OS/xv6_0x4/" title="XV6 0x4"><img class="post-bg" src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="XV6 0x4"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/02/OS/xv6_0x4/" title="XV6 0x4">XV6 0x4</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-02T14:42:00.000Z" title="发表于 2024-07-02 22:42:00">2024-07-02</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-11T16:00:00.000Z" title="更新于 2024-07-12 00:00:00">2024-07-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/">OS</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OS/xv6/">xv6</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xv6/">xv6</a></span></div><div class="content">lab4trap步骤（跳转到trampoline）：交换 a0 和 sscratch：  使用 csrrw a0, sscratch, a0 指令交换 a0 和 sscratch 的值。这样，a0 现在指向 TRAPFRAME，这是用户空间的 trapframe 地址，而 sscratch 保存了原来的 a0 值（即用户态传递的参数）。  保存用户态寄存器：  将所有用户态寄存器的值保存到 a0 指向的 trapframe 中，以便在处理完陷阱后可以恢复这些寄存器的值。  保存用户态的 a0：  将 sscratch（即原来的 a0）保存到 trapframe 中，以便在返回用户态时可以恢复 a0 的值。  恢复内核态上下文：  从 trapframe 中恢复内核栈指针（sp）、当前 hart 的 id（tp）、usertrap 函数的地址（t0），以及内核页表（satp）。  跳转到 usertrap：  使用 jr t0 跳转到 usertrap()...</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2024/07/01/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/" title="贪心"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="贪心"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/01/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/" title="贪心">贪心</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-01T09:42:00.000Z" title="发表于 2024-07-01 17:42:00">2024-07-01</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-16T16:00:00.000Z" title="更新于 2024-05-17 00:00:00">2024-05-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">畜栏预定 贪心TODO：畜栏预定、雷达设备     贪心题的要点：  思考、证明通过该方法得到的解是最优解，可用res &lt;= ans，res &gt;= ans   ——&gt; res == ans。  acwing905 我们通过重载运算符，设置为通过右端点从小到大排序，获取第一个右端点最大值为max值，若其他线段的左端点小于该max值，则continue。若大于则更新max值，res++。 12345678910111213141516171819202122232425262728293031#include &lt;algorithm&gt;#include &lt;iostream&gt;using namespace std;const int N = 100010;struct st &#123;  int lef;  int rig;  bool operator&lt;(const st &amp;tmp) const &#123; return this-&gt;rig &lt; tmp.rig; &#125;&#125; st[N];int...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/#content-inner">12</a><a class="extend next" rel="next" href="/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Randolf luo</div><div class="author-info-description">今日事，今日毕</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/daily%20record/20241111/" title="记一次2024ICPC杭州站"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次2024ICPC杭州站"/></a><div class="content"><a class="title" href="/2024/11/11/daily%20record/20241111/" title="记一次2024ICPC杭州站">记一次2024ICPC杭州站</a><time datetime="2024-11-11T09:42:00.000Z" title="发表于 2024-11-11 17:42:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/15/math/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="无标题"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/10/15/math/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="无标题">无标题</a><time datetime="2024-10-15T06:44:44.734Z" title="发表于 2024-10-15 14:44:44">2024-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/29/potato_clock/v0.01/" title="无标题"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/09/29/potato_clock/v0.01/" title="无标题">无标题</a><time datetime="2024-09-29T06:08:49.443Z" title="发表于 2024-09-29 14:08:49">2024-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/26/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%840x2/" title="无标题"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/09/26/%E7%AE%97%E6%B3%95/%E6%B4%9B%E8%B0%B7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%840x2/" title="无标题">无标题</a><time datetime="2024-09-26T12:40:48.042Z" title="发表于 2024-09-26 20:40:48">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/26/pr/pr%E5%85%A5%E9%97%A8/" title="无标题"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2024/09/26/pr/pr%E5%85%A5%E9%97%A8/" title="无标题">无标题</a><time datetime="2024-09-26T12:40:47.924Z" title="发表于 2024-09-26 20:40:47">2024-09-26</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OS/"><span class="card-category-list-name">OS</span><span class="card-category-list-count">13</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OS/nju-os/"><span class="card-category-list-name">nju_os</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OS/xv6/"><span class="card-category-list-name">xv6</span><span class="card-category-list-count">12</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">8</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/codeforces/"><span class="card-category-list-name">codeforces</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/"><span class="card-category-list-name">暑期集训</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/bat/"><span class="card-category-list-name">bat</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/cpp/"><span class="card-category-list-name">cpp</span><span class="card-category-list-count">20</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/cpp/" style="font-size: 1.45em; color: rgb(115, 132, 101);">cpp</a><a href="/tags/cherno/" style="font-size: 1.24em; color: rgb(50, 86, 50);">cherno</a><a href="/tags/effective-cpp/" style="font-size: 1.31em; color: rgb(98, 130, 142);">effective cpp</a><a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.2em; color: rgb(50, 54, 82);">单片机</a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.17em; color: rgb(130, 50, 130);">51单片机</a><a href="/tags/OS/" style="font-size: 1.4em; color: rgb(162, 175, 94);">OS</a><a href="/tags/nju-os/" style="font-size: 1.15em; color: rgb(70, 163, 82);">nju_os</a><a href="/tags/xv6/" style="font-size: 1.38em; color: rgb(120, 158, 192);">xv6</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.15em; color: rgb(91, 171, 168);">前端</a><a href="/tags/vue3/" style="font-size: 1.15em; color: rgb(58, 50, 51);">vue3</a><a href="/tags/TinyWebServer/" style="font-size: 1.29em; color: rgb(144, 174, 50);">TinyWebServer</a><a href="/tags/bat/" style="font-size: 1.2em; color: rgb(50, 157, 51);">bat</a><a href="/tags/ctf/" style="font-size: 1.43em; color: rgb(132, 167, 50);">ctf</a><a href="/tags/pwn/" style="font-size: 1.27em; color: rgb(200, 181, 50);">pwn</a><a href="/tags/re/" style="font-size: 1.31em; color: rgb(133, 59, 185);">re</a><a href="/tags/csapp/" style="font-size: 1.36em; color: rgb(50, 131, 50);">csapp</a><a href="/tags/lab/" style="font-size: 1.22em; color: rgb(177, 85, 195);">lab</a><a href="/tags/book/" style="font-size: 1.27em; color: rgb(120, 141, 50);">book</a><a href="/tags/algorithm/" style="font-size: 1.33em; color: rgb(180, 110, 196);">algorithm</a><a href="/tags/codeforces/" style="font-size: 1.27em; color: rgb(146, 186, 87);">codeforces</a><a href="/tags/javascript/" style="font-size: 1.2em; color: rgb(67, 69, 50);">javascript</a><a href="/tags/golang/" style="font-size: 1.17em; color: rgb(112, 50, 182);">golang</a><a href="/tags/git/" style="font-size: 1.15em; color: rgb(166, 199, 168);">git</a><a href="/tags/python/" style="font-size: 1.29em; color: rgb(187, 91, 172);">python</a><a href="/tags/stm32%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.15em; color: rgb(91, 50, 119);">stm32单片机</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(151, 182, 79);">数据分析</a><a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 1.17em; color: rgb(50, 115, 145);">爬虫</a><a href="/tags/target-TODO/" style="font-size: 1.17em; color: rgb(76, 50, 159);">target&TODO</a><a href="/tags/%E6%9A%91%E6%9C%9F%E9%9B%86%E8%AE%AD/" style="font-size: 1.17em; color: rgb(187, 175, 153);">暑期集训</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.4em; color: rgb(136, 140, 89);">算法</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.17em; color: rgb(50, 95, 89);">计算机网络</a><a href="/tags/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" style="font-size: 1.15em; color: rgb(164, 50, 50);">阅读笔记</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/" title="查看更多"><i class="fas fa-angle-right"></i></a>
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/11/">
+          <span class="card-archive-list-date">十一月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/10/">
+          <span class="card-archive-list-date">十月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/09/">
+          <span class="card-archive-list-date">九月 2024</span>
+          <span class="card-archive-list-count">9</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/08/">
+          <span class="card-archive-list-date">八月 2024</span>
+          <span class="card-archive-list-count">5</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/07/">
+          <span class="card-archive-list-date">七月 2024</span>
+          <span class="card-archive-list-count">22</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/06/">
+          <span class="card-archive-list-date">六月 2024</span>
+          <span class="card-archive-list-count">5</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/05/">
+          <span class="card-archive-list-date">五月 2024</span>
+          <span class="card-archive-list-count">15</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/04/">
+          <span class="card-archive-list-date">四月 2024</span>
+          <span class="card-archive-list-count">15</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">111</div></div><div class="webinfo-item"><div class="item-name">运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-04-30T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">219.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-11T10:24:06.283Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/top.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["Just Do iT"])
+  } else {
+    document.getElementById("subtitle").textContent = "Just Do iT"
+  }
+}
+typedJSFn.run(subtitleType)</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
