@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>记：2025-2 | Randolfluo's blog</title><meta name="author" content="Randolf luo"><meta name="copyright" content="Randolf luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记：2025-2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记：2025-2">
+<meta property="og:url" content="http://randolfluo.github.io/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/index.html">
+<meta property="og:site_name" content="Randolfluo&#39;s blog">
+<meta property="og:description" content="记：2025-2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://api.yujn.cn/api/ACG.php">
+<meta property="article:published_time" content="2025-02-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-17T16:00:00.000Z">
+<meta property="article:author" content="Randolf luo">
+<meta property="article:tag" content="record">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://api.yujn.cn/api/ACG.php"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Randolf luo","link":"链接: ","source":"来源: Randolfluo's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记：2025-2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">122</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(http://api.yujn.cn/api/ACG.php);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Randolfluo's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">记：2025-2</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">记：2025-2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-17T16:00:00.000Z" title="发表于 2025-02-18 00:00:00">2025-02-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-17T16:00:00.000Z" title="更新于 2025-02-18 00:00:00">2025-02-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/record/">record</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="记：2025-2"><a href="#记：2025-2" class="headerlink" title="记：2025-2"></a>记：2025-2</h1><p>2025年2月18日星期二 00:00~2:30    大三网络工程在读    在家</p>
+<hr>
+<p>这是我的第一篇日记，写写最近的我。</p>
+<ul>
+<li><p>过去的我思绪万千，却沉迷网络世界，无心记录。</p>
+</li>
+<li><p>今日的我斗志昂扬，写着博客考着研，特此记录。</p>
+</li>
+</ul>
+<h3 id="原来我生活在幸福中"><a href="#原来我生活在幸福中" class="headerlink" title="原来我生活在幸福中"></a>原来我生活在幸福中</h3><p>​    父母没有在城里买房，我们一家和爷爷奶奶住在城乡结合部。他们对我格外溺爱，在这样的温床里度过了我的十八岁，升入大学，远离家人。<br></p>
+<p>​    离家太远，思念越重。离开熟悉的县城，前往陌生的城市。陌生的人，不习惯的饮食，我愈来愈思念家，原来，过去的我一直生活在幸福中，所谓“人在福中不知福”。<br></p>
+<p>​    看着父亲渐白的头发，母亲起皱的眉头，爷爷渐低的听力，奶奶不便的腿脚。半年回一次家的我发现了这些，可是我似乎还没准备好应对这些。<br></p>
+<p>​    我换手机，家人支持；我想考研，家人支持；我去旅行，家人支持。家里人给了我无限的支持<br></p>
+<blockquote>
+<p>感谢家里人给予我的支持，虽然他们不会很快看到这条博客</p>
+</blockquote>
+<p>​    妹妹渐渐长大，我大学在读。我想，我们是家里冉冉升起的新星，要肩负未来。for future,for family.</p>
+<h3 id="越长越大，勿欲想欲小"><a href="#越长越大，勿欲想欲小" class="headerlink" title="越长越大，勿欲想欲小"></a>越长越大，勿欲想欲小</h3><blockquote>
+<p> 人的年龄就像树的年轮，新的表面不断覆盖旧时记忆。年轮记录了成长、虫害、火灾，象征着我们曾经的欢乐与痛苦。剥开年轮，回忆涌入身心。</p>
+</blockquote>
+<p>​    人们常说，高考是人生的分水岭。但我想，以我目前的经历来说，大学的经历、思想决定了你的上限，高考仅仅决定了人的下限。</p>
+<ul>
+<li>有人在大学幡然醒悟，找到人生方向，拼搏奋进。</li>
+<li>有人在大学迷失自我，失去方向，失去目标。</li>
+</ul>
+<blockquote>
+<ul>
+<li>高考的我，仿佛经历一场梦，浑浑噩噩，虚虚实实，糊糊涂涂过完暑假。</li>
+<li>大一的我，是古代海上失去了指南针的船只，随着风雨飘摇不定，甚为迷惘。</li>
+<li>大二的我，回忆过去，尝试改变，却屡次碰壁。</li>
+<li>大三的我，备战考研，注视着future</li>
+<li>大四的我…</li>
+</ul>
+</blockquote>
+<p>​    过去的我，常幻想拥有一台时光机，回到过去，篡改每一个我所后悔的时空。幻想着虚假的美好。渐渐的虚拟的美好无法满足现实的落差，我的未来，似乎乌云密布。</p>
+<ul>
+<li>我后悔我没能努力学习，考上更好的大学。</li>
+<li>我后悔我没能勇敢追爱，收获青春的美好。</li>
+<li>我后悔我没能保护眼睛，失去清晰的世界。</li>
+</ul>
+<blockquote>
+<p>要想改变自我，得先改变思想——“越长越大，勿欲想欲小”</p>
+</blockquote>
+<p>​    请，从今天开始，不要沉浸与过去的悔恨，也不要逃避过去，不要像之前的自己那样痛苦的活着。<br></p>
+<p>​    请，从今天开始，看向未来，汲取过去的经验，朝着未来迈进，像自己梦想般或者。<br></p>
+<h3 id="我的梦想（2025）"><a href="#我的梦想（2025）" class="headerlink" title="我的梦想（2025）"></a>我的梦想（2025）</h3><blockquote>
+<ul>
+<li><p>淡泊明志的老人，在回忆梦想成真的那一刻。</p>
+</li>
+<li><p>兢兢业业的成年人，努力朝着梦想靠近。</p>
+</li>
+<li>勤奋刻苦的青年，想快快成年实现梦想。</li>
+<li>天真烂漫的儿童，在纸上描写着梦想。</li>
+<li>牙牙学语的幼儿，在想着什么是梦想。</li>
+</ul>
+<p>要我说，他们的梦想是一样的吗？   </p>
+<p>解：我想当然不是。人生每个阶段有不同的梦想。</p>
+<p>​    至少，现在的我，怀揣着梦想</p>
+</blockquote>
+<p>我想，我的梦想觉不会是在一线城市中拥有一套房。<br></p>
+<ul>
+<li>未来的我想考研……</li>
+<li>未来的我想写歌，从小学了解初音未来，到初高中听初音未来，再到大学尝试着学习编曲。如果有人问我为什么喜欢听虚拟歌姬？我想，声音是虚的，感情是实的，我喜欢不同p主下的初音，诉说着不同的故事。我也想，想向大家讲述我的故事。</li>
+<li>未来的我想和家人一起旅游，走遍祖国大地，领略大好河山。</li>
+<li>…</li>
+</ul>
+<h3 id="前路"><a href="#前路" class="headerlink" title="前路"></a>前路</h3><h4 id="我为什么要考研"><a href="#我为什么要考研" class="headerlink" title="我为什么要考研"></a>我为什么要考研</h4><ul>
+<li>有人说考研，是为了寻求科研，找寻世界真正的秘密。</li>
+<li>有人说考研，是为了找好工作，硕士总比本科强。</li>
+<li>有人说考研，是逃避AI风云下的世界，屋下暂且休整。</li>
+<li>…</li>
+</ul>
+<p>对我来说，以上都有，但是驱使我考研的最大动力也许是不甘：</p>
+<blockquote>
+<p>每当父母和他人谈起我时：总是说，我考了公办大学，不用太多花费，相较于大多数人，我已经很厉害了！</p>
+</blockquote>
+<p>我想，我对现在的我是不满意的，我想对高考的我扇一巴掌。<br></p>
+<p>我不知道自己的上限，因为我觉得高中的我不是努力的我，现在的我绝不会是无数时空线中优秀的那个：</p>
+<ul>
+<li><p>因此，考研，对我来说，成了一场检验。</p>
+</li>
+<li><p>我想考上985，for证明自己。</p>
+</li>
+</ul>
+<p>​    </p>
+<h4 id="11408or22408"><a href="#11408or22408" class="headerlink" title="11408or22408"></a>11408or22408</h4><p>近些天来，我犹豫着是准备11408还是22408：<br></p>
+<ul>
+<li>11408人少，难度高，分数线较低，跨考人数较少，985院校多</li>
+<li>22408人多，难度低，分数线较高，跨考人数较多，985院校少</li>
+</ul>
+<p>我想…我想早日工作实现梦想，也许中科大软院是我的最佳选择：<br></p>
+<ul>
+<li>科软初试分数高，能检验我的学习能力</li>
+<li>科软复试公平，可些许提高录取率</li>
+<li>科软无导师，能早日实习工作</li>
+</ul>
+<blockquote>
+<p>我想，我不需要犹豫，不论我做何选择，父母总会支持我。愿十四个月后的我，科软拟录取。</p>
+<img src="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/228c4f7d2c6ac9c0fd5362d260dea26.jpg" class="" title="聊天记录">
+</blockquote>
+<h3 id="近期记录"><a href="#近期记录" class="headerlink" title="近期记录"></a>近期记录</h3><blockquote>
+<p>2025-1-23：广州塔（Canton Tower）：电动牙刷promax</p>
+<img src="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/841ebd1bc6c6ca4b0660b9c00df45b8.jpg" class="" title="Canton Tower">
+<p>2025-1-25：中大深（SYSU-Shenzhen）：985大学确实不一样</p>
+<img src="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/b9048cac9a56d4937af5494c21bd588.jpg" class="" title="图书馆（远景）">
+<img src="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/c5390e2cce433c36c66a5d52a0faaa9.jpg" class="" title="图书馆（近景）">
+<img src="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/dcb9ae1b63a66b6735c3e1e24653e7a.jpg" class="" title="自己找到角度，感觉拍的还算不错">
+<p>2025-2-18：从小米到华为，也算是一种成熟吧：</p>
+<img src="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/image-20250218143740221.png" class="" title="左：xiaomi12x 可能坏主板或cpu 右：二手淘的mate40pro">
+</blockquote>
+<h3 id="稻香"><a href="#稻香" class="headerlink" title="稻香"></a>稻香</h3><p>最后，以一首稻香结束。致2025初的自己。</p>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=552315351&bvid=BV1Ki4y1y7HC&cid=550103819&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<blockquote>
+<p>稻香 - 周杰伦 (Jay Chou)<br>对这个世界如果你有太多的抱怨<br>跌倒了就不敢继续往前走<br>为什么人要这么的脆弱堕落<br>请你打开电视看看<br>多少人为生命在努力勇敢的走下去<br>我们是不是该知足<br>珍惜一切就算没有拥有<br>还记得你说家是唯一的城堡<br>随着稻香河流继续奔跑<br>微微笑 小时候的梦我知道<br>不要哭让萤火虫带着你逃跑<br>乡间的歌谣永远的依靠<br>回家吧 回到最初的美好<br>不要这么容易就想放弃<br>就像我说的<br>追不到的梦想换个梦不就得了<br>为自己的人生鲜艳上色<br>先把爱涂上喜欢的颜色<br>笑一个吧<br>功成名就不是目的<br>让自己快乐快乐这才叫做意义<br>童年的纸飞机<br>现在终于飞回我手里<br>所谓的那快乐<br>赤脚在田里追蜻蜓追到累了<br>偷摘水果被蜜蜂给叮到怕了<br>谁在偷笑呢<br>我靠着稻草人<br>吹着风 唱着歌 睡着了<br>午后吉他在虫鸣中更清脆<br>阳光洒在路上就不怕心碎<br>珍惜一切 就算没有拥有<br>还记得你说家是唯一的城堡<br>随着稻香河流继续奔跑<br>微微笑 小时候的梦我知道<br>不要哭让萤火虫带着你逃跑<br>乡间的歌谣永远的依靠<br>回家吧 回到最初的美好<br>还记得你说家是唯一的城堡<br>随着稻香河流继续奔跑<br>微微笑 小时候的梦我知道<br>不要哭让萤火虫带着你逃跑<br>乡间的歌谣永远的依靠<br>回家吧 回到最初的美好</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io">Randolf luo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/">http://randolfluo.github.io/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://randolfluo.github.io" target="_blank">Randolfluo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/record/">record</a></div><div class="post-share"><div class="social-share" data-image="http://api.yujn.cn/api/ACG.php" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/13/music/0x1/" title="music0x1"><img class="cover" src="https://www.dmoe.cc/random.php" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">music0x1</div></div><div class="info-2"><div class="info-item-1"> 作词（Lyric Writing）：作词是指创作歌曲中的文字内容，它通常传达了歌曲的主题、情感和信息。 作曲（Composition）：创作歌曲的旋律和和声结构。 编曲（Arrangement）：根据作曲的旋律和和声，安排乐器和声音的具体配置。 混音（Mixing）将所有独立的音频轨道合成一个音频文件。  编曲靠实力，混音靠money </div></div></div></a><a class="pagination-related" href="/2025/03/16/22408/math/%E9%AB%98%E6%95%B0%E6%A6%82%E5%BF%B5/" title=""><img class="cover" src="https://api.paugram.com/wallpaper/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2"></div></div><div class="info-2"><div class="info-item-1"> 这张图片系统梳理了微积分中几个核心概念之间的逻辑关系，现将知识点分层解析如下： 【基础关系框架】  单变量函数层级✅ 可导 ⇒ 连续 ⇒ 可积（闭区间）✅ 连续 ⇒ 有界（闭区间）❌ 逆命题不成立： |x| 连续但不可导 有界震荡函数可积不连续（如Dirichlet函数有理点取1，无理点取0）   多变量函数特性✅ 可微 ⇒ 连续 偏导数存在✅ 偏导数连续 ⇒ 可微（充分条件）❌ 偏导数存在 ⇏ 连续： 示例：f(x,y)=(xy)/(x²+y²)在原点附近    【重点关系图谱】可导性 ←强于→ 连续性 ←强于→ 可积性↑　　　　　　　↑　　　　　　　↑可微性　　　有界性　　　闭区间条件 【关键定理补充】  二阶偏导对称性（Clairaut定理）：若 f_xy 和 f_yx 在点P处连续，则 f_xy = f_yx 可微充分条件：若函数在某点所有偏导数存在，且至少一个偏导数连续 ⇒...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/11/11/record/2024_11_11/" title="记一次2024ICPC杭州站"><img class="cover" src="https://api.paugram.com/wallpaper/" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-11</div><div class="info-item-2">记一次2024ICPC杭州站</div></div><div class="info-2"><div class="info-item-1">记一次2024ICPC杭州站 到达沉降东站！    房间有点小，还靠近马路，体验很差！    参赛队伍：好多985211✌，旁边两个211，顶不住啊/(ㄒoㄒ)/~~    杭师大体育馆（PS：好大，可以开演唱会！）     抽奖抽中数据线，ICPC比赛送了包包和卫衣，福利还是很不错的：    热身赛A题，错把0看成回答正确的输出，赛中罚时n下仍未做出，以后交互题还得是一行一行看啊。    正式赛  算了，还是省略吧   附上一些杭师大美图（美丽又现代）      总结  明年加油 </div></div></div></a><a class="pagination-related" href="/2025/03/31/record/%E8%AE%B0%EF%BC%9A2025-3/" title="记：2025-3"><img class="cover" src="https://api.gumengya.com/Api/DmImg?format=image" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-31</div><div class="info-item-2">记：2025-3</div></div><div class="info-2"><div class="info-item-1">记：2025-32025年3月31日星期一 22:10~23:15        acm实验室 这个月的我，生活在焦虑中​    随着2025新年的第一次踏入嘉带，大三的老灯们都投入到了紧张的考研中。我的舍友也开始了考研  刚开始的我感觉还算可以，不管是学习效率还是题目正确率都较为满意  但是随着时间的推移，我不得不把精力投入到算法竞赛中（现在还没有牌子），同时学到高数下，我的正确率骤然下降（40%）。看到舍友的速度飞快，研友学习速度和正确率远超我。我开始感到焦虑，不自信。 1234567while（压力&gt;动力）&#123;    压力++    动力--    效率--   ...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Randolf luo</div><div class="author-info-description">今日事，今日毕</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">122</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%EF%BC%9A2025-2"><span class="toc-number">1.</span> <span class="toc-text">记：2025-2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E6%9D%A5%E6%88%91%E7%94%9F%E6%B4%BB%E5%9C%A8%E5%B9%B8%E7%A6%8F%E4%B8%AD"><span class="toc-number">1.0.1.</span> <span class="toc-text">原来我生活在幸福中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%8A%E9%95%BF%E8%B6%8A%E5%A4%A7%EF%BC%8C%E5%8B%BF%E6%AC%B2%E6%83%B3%E6%AC%B2%E5%B0%8F"><span class="toc-number">1.0.2.</span> <span class="toc-text">越长越大，勿欲想欲小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E6%A2%A6%E6%83%B3%EF%BC%882025%EF%BC%89"><span class="toc-number">1.0.3.</span> <span class="toc-text">我的梦想（2025）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%B7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text">前路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%80%83%E7%A0%94"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">我为什么要考研</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11408or22408"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">11408or22408</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E8%AE%B0%E5%BD%95"><span class="toc-number">1.0.5.</span> <span class="toc-text">近期记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%BB%E9%A6%99"><span class="toc-number">1.0.6.</span> <span class="toc-text">稻香</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/18/%E7%AE%97%E6%B3%95/%E9%A2%98%E8%A7%A3/The%2018th%20Zhejiang%20Provincial%20Collegiate%20Programming%20Contest/" title="The 18th Zhejiang Provincial Collegiate Programming Contest"><img src="https://api.mtyqx.cn/tapi/random.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The 18th Zhejiang Provincial Collegiate Programming Contest"/></a><div class="content"><a class="title" href="/2025/04/18/%E7%AE%97%E6%B3%95/%E9%A2%98%E8%A7%A3/The%2018th%20Zhejiang%20Provincial%20Collegiate%20Programming%20Contest/" title="The 18th Zhejiang Provincial Collegiate Programming Contest">The 18th Zhejiang Provincial Collegiate Programming Contest</a><time datetime="2025-04-17T16:00:00.000Z" title="发表于 2025-04-18 00:00:00">2025-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC7%E7%AB%A0-%E6%9F%A5%E6%89%BE/" title="无标题"><img src="https://api.paugram.com/wallpaper/" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC7%E7%AB%A0-%E6%9F%A5%E6%89%BE/" title="无标题">无标题</a><time datetime="2025-04-14T02:09:58.968Z" title="发表于 2025-04-14 10:09:58">2025-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC5%E7%AB%A0-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" title="数据结构-第5章—树与二叉树"><img src="https://img.paulzzh.com/touhou/random" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构-第5章—树与二叉树"/></a><div class="content"><a class="title" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC5%E7%AB%A0-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" title="数据结构-第5章—树与二叉树">数据结构-第5章—树与二叉树</a><time datetime="2025-04-13T16:00:00.000Z" title="发表于 2025-04-14 00:00:00">2025-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/13/%E7%AE%97%E6%B3%95/acwing/%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%B8%8E%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" title="线段树与树状数组"><img src="https://api.gumengya.com/Api/DmImg?format=image" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线段树与树状数组"/></a><div class="content"><a class="title" href="/2025/04/13/%E7%AE%97%E6%B3%95/acwing/%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%B8%8E%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" title="线段树与树状数组">线段树与树状数组</a><time datetime="2025-04-13T09:42:00.000Z" title="发表于 2025-04-13 17:42:00">2025-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/13/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC6%E7%AB%A0-%E5%9B%BE/" title="数据结构-第6章—图"><img src="http://api.yujn.cn/api/ACG.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构-第6章—图"/></a><div class="content"><a class="title" href="/2025/04/13/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC6%E7%AB%A0-%E5%9B%BE/" title="数据结构-第6章—图">数据结构-第6章—图</a><time datetime="2025-04-12T16:00:00.000Z" title="发表于 2025-04-13 00:00:00">2025-04-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(http://api.yujn.cn/api/ACG.php);"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

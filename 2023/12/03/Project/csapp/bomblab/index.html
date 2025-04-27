@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>bomblab | Randolfluo's blog</title><meta name="author" content="Randolf luo"><meta name="copyright" content="Randolf luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="csapp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bomblab">
+<meta property="og:url" content="http://randolfluo.github.io/2023/12/03/Project/csapp/bomblab/index.html">
+<meta property="og:site_name" content="Randolfluo&#39;s blog">
+<meta property="og:description" content="csapp">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://api.mtyqx.cn/tapi/random.php">
+<meta property="article:published_time" content="2023-12-03T14:42:00.000Z">
+<meta property="article:modified_time" content="2023-12-02T16:00:00.000Z">
+<meta property="article:author" content="Randolf luo">
+<meta property="article:tag" content="csapp">
+<meta property="article:tag" content="lab">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.mtyqx.cn/tapi/random.php"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/2023/12/03/Project/csapp/bomblab/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Randolf luo","link":"链接: ","source":"来源: Randolfluo's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'bomblab',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">122</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://api.mtyqx.cn/tapi/random.php);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Randolfluo's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">bomblab</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">bomblab</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-03T14:42:00.000Z" title="发表于 2023-12-03 22:42:00">2023-12-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-02T16:00:00.000Z" title="更新于 2023-12-03 00:00:00">2023-12-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csapp/">csapp</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/csapp/lab/">lab</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="bomblab"><a href="#bomblab" class="headerlink" title="bomblab"></a>bomblab</h2><p>开始愉快的拆除炸弹吧，（bushi）<br/></p>
+<p>通过这次实验可以基本掌握gdb的使用，这次使用了<code>pwndgb插件</code><br/></p>
+<p>可以使用<code>objdump</code>查看反汇编程序，也可以在<code>gdb</code>里使用disassemble反汇编</p>
+<p>超详细的wp<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/472178808">CSAPP | Lab2-Bomb Lab 深入解析 - 知乎 (zhihu.com)</a></p>
+<img src="/2023/12/03/Project/csapp/bomblab/5025fe31ffffeaafea8a077f2037d470.png" class="" title="image-20231203161611622">
+<h3 id="pwndgb的基本指令"><a href="#pwndgb的基本指令" class="headerlink" title="pwndgb的基本指令"></a>pwndgb的基本指令</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s</td>
+<td>单步步入</td>
+</tr>
+<tr>
+<td>n</td>
+<td>单步步过</td>
+</tr>
+<tr>
+<td>r</td>
+<td>重新运行</td>
+</tr>
+<tr>
+<td>c</td>
+<td>继续运行</td>
+</tr>
+<tr>
+<td>i b, i r</td>
+<td>查看断点、寄存器</td>
+</tr>
+<tr>
+<td>return</td>
+<td>退出当前函数</td>
+</tr>
+<tr>
+<td>search 114514</td>
+<td>查找114514</td>
+</tr>
+<tr>
+<td>b *0x114514  ， b fun_name</td>
+<td>在0x114514处下断点、在函数fun_name处下断点</td>
+</tr>
+<tr>
+<td>delete ，delete 114514</td>
+<td>删除所有断点，删除114514号断点</td>
+</tr>
+<tr>
+<td>disassemble main</td>
+<td>反汇编main函数</td>
+</tr>
+<tr>
+<td>vmmap</td>
+<td>显示进程的内存映射</td>
+</tr>
+<tr>
+<td>cyclic 50</td>
+<td>生成50个用来溢出的字符</td>
+</tr>
+<tr>
+<td>cyclic -l   字符串</td>
+<td>定位字符串再溢出字符的位置</td>
+</tr>
+<tr>
+<td>p 0xffffceec-0xffffcf58</td>
+<td>计算0xffffceec-0xffffcf58的值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phase-1"><a href="#phase-1" class="headerlink" title="phase_1"></a>phase_1</h3><img src="/2023/12/03/Project/csapp/bomblab/43f1500b7c13cf76edf2ea3fc1ed7692.png" class="" title="image-20231203163914571">
+<p>在phase_1处下断点<code>b phase_1</code>，然后使用<code>s</code>单步</p>
+<img src="/2023/12/03/Project/csapp/bomblab/6f3a557ad462eba475cd08b188857c51.png" class="" title="image-20231203170117688">
+<p>发现传入四个参数，其中rdi寄存器存储我们输入的值，rsi寄存器存储着字符串。然后通过函数<code>strings_not_equal</code>可以判断出函数是将这两个字符串进行比较，然后通过<code>test eax, eax</code>对返回值进行判断</p>
+<blockquote>
+<p>如果 <code>eax</code> 的值为零，则零标志位 (ZF) 将被设置为 1。</p>
+<p>如果 <code>eax</code> 的值非零，则零标志位 (ZF) 将被设置为 0.</p>
+</blockquote>
+<p>当<code>ZF</code>标志位为1时，跳转到<code>phase_1+23</code>，否则调用<code>explode——bomb</code></p>
+<img src="/2023/12/03/Project/csapp/bomblab/3e770cc6ca1380dcef1454843dda9f3b.png" class="" title="image-20231203171135172">
+<p>可以通过<code>x/s</code>查看内存<br/></p>
+<p>显然，<code>phase_1</code>的答案为Border relations with Canada have never been better.</p>
+<h3 id="phase-2"><a href="#phase-2" class="headerlink" title="phase_2"></a>phase_2</h3><p>删除所有断点，进入<code>phase2</code>，下断点，<code>s</code>单步</p>
+<img src="/2023/12/03/Project/csapp/bomblab/d9d8f7b052a351ce55364ff33a1e2fd3.png" class="" title="image-20231203172459154">
+<p>进入<code>read_six_numbers</code>函数</p>
+<img src="/2023/12/03/Project/csapp/bomblab/ec34b578c85acc7749bab66131714d1e.png" class="" title="image-20231203184628648">
+<p><code>cmp eax, 5</code>应该是每成功处理一个输入，eax++。scanf函数返回已成功赋值的数据项数，返回值存储在eax寄存器。</p>
+<p>eax==5即全部参数处理完毕，由此我们可以确定我们要输入六个参数。</p>
+<img src="/2023/12/03/Project/csapp/bomblab/d8d8a8d288f60068fc4cb77892e0906b.png" class="" title="image-20231203190610247">
+<p>然后继续分析<code>phase_2</code>,直接<code>disassemble phase_2</code></p>
+<img src="/2023/12/03/Project/csapp/bomblab/7c2bac8f28025a2bed838d60b8d6fa10.png" class="" title="image-20231203194602569">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmp    DWORD PTR [rsp],0x1</span><br></pre></td></tr></table></figure>
+<p>判断第一个字符是否为1，否则bomb！！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add    eax,eax</span><br></pre></td></tr></table></figure>
+<p>每次输入的数就是前面数的两倍</p>
+<img src="/2023/12/03/Project/csapp/bomblab/df43e51f3b0d4520a18bdb2ea73732c9.png" class="" title="image-20231203201114019">
+<p>从bomb.c 文件中可以看到,当输入两个命令行参数时，我们可以以一个文件作为输入，因此可以创建ans.txt文件作为输入</p>
+<img src="/2023/12/03/Project/csapp/bomblab/fc0934884d839b673456a0545ff35603.png" class="" title="image-20231203201054433">
+<p>第一个参数为     /home/randolfluo/Desktop/csapp/bomb/bomb </p>
+<p>第二个参数为     ans.txt</p>
+<p>因此执行 argc为2的代码</p>
+<h3 id="phase-3"><a href="#phase-3" class="headerlink" title="phase_3"></a>phase_3</h3><img src="/2023/12/03/Project/csapp/bomblab/6ebc1b5e61c22e2aa90fcda792fcc3a5.png" class="" title="image-20231203203308292">
+<img src="/2023/12/03/Project/csapp/bomblab/90d6a2e8a2cab5b6a5f00e52f80832b6.png" class="" title="image-20231203213634902">
+<p>调用scanf函数，若已成功赋值的数据项数<code>eax&gt;1</code>成立，则<code>jg</code>有符号大于则跳转,避开爆炸,因此必须要有三个输入<br/></p>
+<p>而我们从scanf函数的format中可以看到，输入了两个整型。但！回车就是第三个输入。</p>
+<img src="/2023/12/03/Project/csapp/bomblab/ebb8587f2b326d67eed23709a8ac2e56.png" class="" title="image-20231203204253665">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0x400f6a &lt;phase_3+39&gt;     cmp    dword ptr [rsp + 8], 7</span><br><span class="line">   0x400f6f &lt;phase_3+44&gt;     ja     phase_3+106                      &lt;phase_3+106&gt;</span><br></pre></td></tr></table></figure>
+<p>判断第一个输入小于7，然后进行后续跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x400f75 &lt;phase_3+50&gt;     jmp    qword ptr [rax*8 + 0x402470]  &lt;phase_3+118&gt;</span><br></pre></td></tr></table></figure>
+<p>通过你输入的第一个值来跳转不同验证代码，<code>rax*8 + 0x402470</code>,查看0x402470处的内存，因为linux在x86-64是小端序。小端序意味着较低地址的字节排放在内存中的较低地址，而较高地址的字节排放在内存中的较高地址。</p>
+<img src="/2023/12/03/Project/csapp/bomblab/26c24544ded38253be90d2c4a8932565.png" class="" title="image-20231203215150641">
+<p>如果输入 1，则跳转到0x0000000000400fb9</p>
+<p>则第二个数则0x137，化为十进制即311</p>
+<h3 id="phase-4"><a href="#phase-4" class="headerlink" title="phase_4"></a>phase_4</h3><p>依然是输入两个整型，将phase_4反汇编一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Dump of assembler code for function phase_4:</span><br><span class="line">   0x000000000040100c &lt;+0&gt;:	sub    rsp,0x18</span><br><span class="line">   0x0000000000401010 &lt;+4&gt;:	lea    rcx,[rsp+0xc]</span><br><span class="line">   0x0000000000401015 &lt;+9&gt;:	lea    rdx,[rsp+0x8]</span><br><span class="line">   0x000000000040101a &lt;+14&gt;:	mov    esi,0x4025cf</span><br><span class="line">   0x000000000040101f &lt;+19&gt;:	mov    eax,0x0</span><br><span class="line">   0x0000000000401024 &lt;+24&gt;:	call   0x400bf0 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line">   0x0000000000401029 &lt;+29&gt;:	cmp    eax,0x2</span><br><span class="line">   0x000000000040102c &lt;+32&gt;:	jne    0x401035 &lt;phase_4+41&gt;</span><br><span class="line">   0x000000000040102e &lt;+34&gt;:	cmp    DWORD PTR [rsp+0x8],0xe</span><br><span class="line">   0x0000000000401033 &lt;+39&gt;:	jbe    0x40103a &lt;phase_4+46&gt;</span><br><span class="line">   0x0000000000401035 &lt;+41&gt;:	call   0x40143a &lt;explode_bomb&gt;</span><br><span class="line">   0x000000000040103a &lt;+46&gt;:	mov    edx,0xe</span><br><span class="line">   0x000000000040103f &lt;+51&gt;:	mov    esi,0x0</span><br><span class="line">   0x0000000000401044 &lt;+56&gt;:	mov    edi,DWORD PTR [rsp+0x8]</span><br><span class="line">   0x0000000000401048 &lt;+60&gt;:	call   0x400fce &lt;func4&gt;</span><br><span class="line">   0x000000000040104d &lt;+65&gt;:	test   eax,eax      ,测试%eax寄存器值是否为0</span><br><span class="line">   0x000000000040104f &lt;+67&gt;:	jne    0x401058 &lt;phase_4+76&gt;	</span><br><span class="line">   0x0000000000401051 &lt;+69&gt;:	cmp    DWORD PTR [rsp+0xc],0x0	，取输入的第二个数	</span><br><span class="line">   0x0000000000401056 &lt;+74&gt;:	je     0x40105d &lt;phase_4+81&gt;	，相等则跳转，则第二个数为0</span><br><span class="line">   0x0000000000401058 &lt;+76&gt;:	call   0x40143a &lt;explode_bomb&gt;	，bomb!!!!!</span><br><span class="line">   0x000000000040105d &lt;+81&gt;:	add    rsp,0x18</span><br><span class="line">   0x0000000000401061 &lt;+85&gt;:	ret    </span><br><span class="line">End of assembler dump.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img src="/2023/12/03/Project/csapp/bomblab/9dc0ebe7ce2f14d66fc5d10eec8c4ad9.png" class="" title="image-20231212201424254">
+<p>调用了<code>fun</code>函数，,同时将第一个输入存放进<code>%rdi</code>寄存器。<br/>发现fun函数是个<code>递归函数</code>。我们需要找到最快方式跳出循环</p>
+<p>jle  0x400ff2 <func4+36>——&gt;0x401007 <func4+57> ——&gt;return</p>
+<p>可以使用<code>word</code>进行分析，其中不同颜色表示不同的跳转地址。</p>
+<img src="/2023/12/03/Project/csapp/bomblab/b4cf9b6463eee996f6947d93ee66ae3f.png" class="" title="image-20231212204902535">
+<p>我们可以得出两个条件<code>输入&lt;=7</code>和输入<code>&gt;=7</code>，那么我们输入的第一个数为<code>7</code>，所以我们的输入为<code>7 0</code></p>
+<h3 id="phase5"><a href="#phase5" class="headerlink" title="phase5"></a>phase5</h3><p>再次使用<code>word</code>大法</p>
+<img src="/2023/12/03/Project/csapp/bomblab/8f97be4b216cbbc1420bb362daa9e113.png" class="" title="image-20231212223325963">
+<p>通过输入的字符串每个元素的<code>低四位</code>来<code>索引</code>字符串<code>maduiersnfotvbylSo you think you can stop the bomb with ctrl-c, do you?</code>的值,最后与<code>flyers</code>进行比较，相同则通关。</p>
+<img src="/2023/12/03/Project/csapp/bomblab/2c4afdb5cbdbd84df24b75094c4b2f66.png" class="" title="image-20231212215327128">
+<p>写个脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">array=<span class="string">&#x27;maduiersnfotvbylSo you think you can stop the bomb with ctrl-c, do you?&#x27;</span></span><br><span class="line">key = <span class="string">&#x27;flyers&#x27;</span></span><br><span class="line"><span class="built_in">list</span>=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> key:</span><br><span class="line">    j = array.find(i)</span><br><span class="line">    j = <span class="built_in">bin</span>(j)[<span class="number">2</span>:]<span class="comment">#将0b前缀去掉</span></span><br><span class="line">    j = j.rjust(<span class="number">4</span>,<span class="string">&#x27;0&#x27;</span>)<span class="comment">#向右填充</span></span><br><span class="line">    i  = <span class="string">&#x27;0110&#x27;</span></span><br><span class="line">    j = i+j</span><br><span class="line">    j = <span class="built_in">int</span>(j,<span class="number">2</span>)</span><br><span class="line">    j = <span class="built_in">chr</span>(j)</span><br><span class="line">    <span class="built_in">print</span>(j,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment">#输出ionefg</span></span><br></pre></td></tr></table></figure>
+<h3 id="phase-6"><a href="#phase-6" class="headerlink" title="phase_6"></a>phase_6</h3><p>下次一定~</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io">Randolf luo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io/2023/12/03/Project/csapp/bomblab/">http://randolfluo.github.io/2023/12/03/Project/csapp/bomblab/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://randolfluo.github.io" target="_blank">Randolfluo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/csapp/">csapp</a><a class="post-meta__tags" href="/tags/lab/">lab</a></div><div class="post-share"><div class="social-share" data-image="https://api.mtyqx.cn/tapi/random.php" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/11/24/CTF/re/SWPUCTF%202021%20%E6%96%B0%E7%94%9F%E8%B5%9B-%E8%80%81%E9%BC%A0%E8%B5%B0%E8%BF%B7%E5%AE%AB/" title="SWPUCTF 2021 新生赛-老鼠走迷宫"><img class="cover" src="https://www.dmoe.cc/random.php" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">SWPUCTF 2021 新生赛-老鼠走迷宫</div></div><div class="info-2"><div class="info-item-1">​    在看雪学苑看到了一题py逆向，正好最近在学习，遂拿来做。 题目链接https://pan.baidu.com/s/1Rq4lJmANHSL1EKk8AZxqDw?pwd=0422  首先拿到一个附件，没有后缀 将其拖入010Editor查看文件头，发现其为4D5A开头，为windowsPE文件的MS-DOS 头，将文件后缀修改为PE文件的可执行系列.exe    ** 可以通过该文件图标特征判断该文件为PyInstaller打包的文件，也可以通过Exeinfo PE来查看文件提示，推荐查看 python打包的二进制文件反编译 - Hk_Mayfly - 博客园 (cnblogs.com)博客里也有一个pwn题  打开exe程序发现是一道迷宫题，flag是用wasd表示的最短路径的md5值。 反编译成py文件我们先把pyinstxtractor.py复制到exe文件同一目录,执行命令  1&gt;python pyinstxtractor.py...</div></div></div></a><a class="pagination-related" href="/2023/12/07/Project/csapp/attacklab/" title="attacklab"><img class="cover" src="https://api.gumengya.com/Api/DmImg?format=image" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">attacklab</div></div><div class="info-2"><div class="info-item-1">Part I: Code Injection Attacks开冲！！ level1 sub rsp,0x28说明缓冲区有0x28即40字节，我们只需在这之后加入touch1()函数的权限地址来提权。 gets()函数不会对输入大小进行检查，遇到\n0x0a结束字符串读取  touch1地址为0x4017c0  payload(注意不能填充0a)，同时小端序要倒序存储(低地址存放数据低位，高地址存放数据高位)  12345600 00 00 00 00 00 00 00 #低地址00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00c0 17 40 00 00 00 00 00...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/12/07/Project/csapp/attacklab/" title="attacklab"><img class="cover" src="https://api.gumengya.com/Api/DmImg?format=image" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-07</div><div class="info-item-2">attacklab</div></div><div class="info-2"><div class="info-item-1">Part I: Code Injection Attacks开冲！！ level1 sub rsp,0x28说明缓冲区有0x28即40字节，我们只需在这之后加入touch1()函数的权限地址来提权。 gets()函数不会对输入大小进行检查，遇到\n0x0a结束字符串读取  touch1地址为0x4017c0  payload(注意不能填充0a)，同时小端序要倒序存储(低地址存放数据低位，高地址存放数据高位)  12345600 00 00 00 00 00 00 00 #低地址00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00c0 17 40 00 00 00 00 00...</div></div></div></a><a class="pagination-related" href="/2024/04/06/Project/csapp/shlab/" title="shlab"><img class="cover" src="https://img.paulzzh.com/touhou/random" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-06</div><div class="info-item-2">shlab</div></div><div class="info-2"><div class="info-item-1">shlab 这个lab主要是考察信号的使用，还有进程创建的知识。  首先回顾一下信号处理程序的终点：  处理程序要尽可能简单。 在处理程序中只调用异步信号安全的函数。(可重入的且不能被信号处理程序中断)。 在进入处理程序时把errno 保存在某个局部变最中，在处理程序返回前恢复它。 阻塞所有的信号，保护对共享全局数据结构的访问。  首先是参数解析执行，在子进程创建过程中，设置和解除阻塞的SIGCHLD信号来避免进程在添加进job组前终止导致把不存在的子进程添加到作业列表中，书上已经给我们例子： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647void eval(char *cmdline) &#123;    char *argv[MAXARGS] = &#123;NULL&#125;;       //初始化指针地址    int fg_bg;    pid_t pid;        sigset_t mask_all, mask_one,...</div></div></div></a><a class="pagination-related" href="/2024/06/25/Project/csapp/malloclab/" title="malloclab"><img class="cover" src="https://img.paulzzh.com/touhou/random" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-25</div><div class="info-item-2">malloclab</div></div><div class="info-2"><div class="info-item-1">0x1 介绍可以从手册得知，我们需要修改mm.c里面的三个函数mm_malloc、mm_free、mm_realloc来实现堆的相关功能。教师们为我们编写了如此庞大的测试环境，那么我们也要认真完成它。 由于lab自带的版本是每次请求时都执行sbrk系统调用。我们知道，系统调用会是陷入内核，花费大量时间，那么接下来我们要做的就是减少系统调用的次数。 下图为自带版本的测试，可以看到内存利用率并不高 ，并且有部分测试并未通过。  0x2 隐式空闲列表我们进行第一次修改，为其实现一个简单的分配器。 注意事项：  这里的块指针bp指向第一个有效载荷  可以利用宏定义将复杂操作定义为类似函数操作的方法（PS：在预处理期间替换，而函数内联等操作则在编译期替换）  sbrk返回值       返回值 描述     (void...</div></div></div></a><a class="pagination-related" href="/2024/02/26/Project/csapp/%E7%AC%AC10%E7%AB%A0%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E7%BA%A7IO/" title="csapp第十章——系统级IO"><img class="cover" src="https://api.mtyqx.cn/tapi/random.php" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-26</div><div class="info-item-2">csapp第十章——系统级IO</div></div><div class="info-2"><div class="info-item-1">系统级I/O输入与输出 (I/O) 是在主存和外部设备（例如磁盘驱动器、终端和网络）之间复制数据的过程。 UNIX I/O 所有的设备（例如网络、磁盘和终端）都被模型化为文件，而所有的输入和输出都被当作对相应文件的读和写来执行。   打开文件。一个应用程序通过要求内核打开相应的文件，来宣告它想要访问一个设备。内核返回一个小的非负整数，叫做描述符，它在后续对此文件的所有操作中标识这个文件。内核记录有关这个打开文件的所有信息。应用程序只需记住这个描述符。 Linux shell 创建的每个进程开始时都有三个打开的文件：  12345/*								 /usr/include/unisted.h 						 */#define STDIN_FILENO    0       /* Standard input.  */#define STDOUT_FILENO   1       /* Standard output.  */#define STDERR_FILENO   2       /* Standard error output. ...</div></div></div></a><a class="pagination-related" href="/2024/01/30/Project/csapp/%E7%AC%AC7%E7%AB%A0%E2%80%94%E2%80%94%E9%93%BE%E6%8E%A5/" title="csapp第七章——链接"><img class="cover" src="https://api.mtyqx.cn/tapi/random.php" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-30</div><div class="info-item-2">csapp第七章——链接</div></div><div class="info-2"><div class="info-item-1">链接链接 (linking) 是将各种代码和数据片段收集并组合成为一个单一文件的过程，这个文件可被加载（复制）到内存并执行 。  链接可以执行于编译时 (compile time), 也就是在源代码被翻译成机器代码时；  也可以执行与加载时 (load time), 也就是在程序被加载器 (loader) 加载到内存并执行时；  甚至执行于运行时 (run time), 也就是由应用程序来执行。   编译器驱动程序12345678910111213141516171819202122232425/* main.c *//* $begin main */int sum(int *a, int n);int array[2] = &#123;1, 2&#125;;int main()&#123;    int val = sum(array, 2);    return val;&#125;/* $end main *//* sum.c *//* $begin sum */int sum(int *a, int n)&#123;    int i, s = 0;    for (i...</div></div></div></a><a class="pagination-related" href="/2024/02/01/Project/csapp/%E7%AC%AC6%E7%AB%A0%E2%80%94%E2%80%94%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" title="csapp第六章——存储器层次结构"><img class="cover" src="https://api.gumengya.com/Api/DmImg?format=image" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-01</div><div class="info-item-2">csapp第六章——存储器层次结构</div></div><div class="info-2"><div class="info-item-1">存储器层次结构计算机技术的成功很大程度上源自于存储技术的巨大进步 。 随机访问存储器静态RAM 由于 SRAM 存储器单元的双稳态特性，只要有电，它就会永远地保持它的值。 动态RAMDRAM 将每个位存储为对每个电容的充电。与 SRAM 不同， DRAM 存储器单元对干扰非常敏感 。  传统的DRAMDRAM 芯片中的单元（位）被分成d 个超单元 (supercell) , 每个超单元都个DRAM单元组成。 d*w 的DRAM 总共存储了d w位信息。  图示为168 DRAM 芯片的组织，有 d=l6 个超单元，每个超单元有 w=8 位， r=4 行，c=4 。   将 DRAM 组织成二维阵列而不是线性数组的一个原因是降低芯片上地址引脚的数量。  二维阵列组织的缺点是必须分两步发送地址，这增加了访问时间。   内存模块DRAM 芯片封装在内存模块 (memory module) 中，它插到主板的扩展槽上 。 内存控制器将超单元地址 发送到内存模块，然后内存模块再广播到每个 DRAM 。作为响应，每个DRAM...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Randolf luo</div><div class="author-info-description">今日事，今日毕</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">122</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#bomblab"><span class="toc-number">1.</span> <span class="toc-text">bomblab</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pwndgb%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">pwndgb的基本指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phase-1"><span class="toc-number">1.2.</span> <span class="toc-text">phase_1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phase-2"><span class="toc-number">1.3.</span> <span class="toc-text">phase_2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phase-3"><span class="toc-number">1.4.</span> <span class="toc-text">phase_3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phase-4"><span class="toc-number">1.5.</span> <span class="toc-text">phase_4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phase5"><span class="toc-number">1.6.</span> <span class="toc-text">phase5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phase-6"><span class="toc-number">1.7.</span> <span class="toc-text">phase_6</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/18/%E7%AE%97%E6%B3%95/%E9%A2%98%E8%A7%A3/The%2018th%20Zhejiang%20Provincial%20Collegiate%20Programming%20Contest/" title="The 18th Zhejiang Provincial Collegiate Programming Contest"><img src="https://api.mtyqx.cn/tapi/random.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The 18th Zhejiang Provincial Collegiate Programming Contest"/></a><div class="content"><a class="title" href="/2025/04/18/%E7%AE%97%E6%B3%95/%E9%A2%98%E8%A7%A3/The%2018th%20Zhejiang%20Provincial%20Collegiate%20Programming%20Contest/" title="The 18th Zhejiang Provincial Collegiate Programming Contest">The 18th Zhejiang Provincial Collegiate Programming Contest</a><time datetime="2025-04-17T16:00:00.000Z" title="发表于 2025-04-18 00:00:00">2025-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC7%E7%AB%A0-%E6%9F%A5%E6%89%BE/" title="无标题"><img src="https://api.paugram.com/wallpaper/" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC7%E7%AB%A0-%E6%9F%A5%E6%89%BE/" title="无标题">无标题</a><time datetime="2025-04-14T02:09:58.968Z" title="发表于 2025-04-14 10:09:58">2025-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC5%E7%AB%A0-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" title="数据结构-第5章—树与二叉树"><img src="https://img.paulzzh.com/touhou/random" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构-第5章—树与二叉树"/></a><div class="content"><a class="title" href="/2025/04/14/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC5%E7%AB%A0-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" title="数据结构-第5章—树与二叉树">数据结构-第5章—树与二叉树</a><time datetime="2025-04-13T16:00:00.000Z" title="发表于 2025-04-14 00:00:00">2025-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/13/%E7%AE%97%E6%B3%95/acwing/%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%B8%8E%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" title="线段树与树状数组"><img src="https://api.gumengya.com/Api/DmImg?format=image" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线段树与树状数组"/></a><div class="content"><a class="title" href="/2025/04/13/%E7%AE%97%E6%B3%95/acwing/%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%B8%8E%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" title="线段树与树状数组">线段树与树状数组</a><time datetime="2025-04-13T09:42:00.000Z" title="发表于 2025-04-13 17:42:00">2025-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/13/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC6%E7%AB%A0-%E5%9B%BE/" title="数据结构-第6章—图"><img src="http://api.yujn.cn/api/ACG.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构-第6章—图"/></a><div class="content"><a class="title" href="/2025/04/13/22408/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC6%E7%AB%A0-%E5%9B%BE/" title="数据结构-第6章—图">数据结构-第6章—图</a><time datetime="2025-04-12T16:00:00.000Z" title="发表于 2025-04-13 00:00:00">2025-04-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://api.mtyqx.cn/tapi/random.php);"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
