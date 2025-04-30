@@ -6,9 +6,10 @@ def process_images():
     # 支持的图片格式
     image_formats = ('.jpg', '.jpeg', '.png', '.webp', '.heic', '.svg', '.tiff', '.tif', '.bmp', '.dpx', '.exr')
     gif_format = ('.gif',)
+    url = "https://randolfluo.top/album/wallpaper/img/"
     
     # 检查img子目录是否存在
-    img_dir = 'img'
+    img_dir = os.path.join(os.path.dirname(__file__), 'img')
     if not os.path.exists(img_dir) or not os.path.isdir(img_dir):
         print(f"Error: Directory '{img_dir}' does not exist!")
         return
@@ -17,6 +18,7 @@ def process_images():
     img_counter = 1
     gif_counter = 1
     gallery_content = ["{% gallery %}"]  # 初始化画廊内容
+    url_links = []  #初始化url链接
     
     # 处理img目录中的文件
     for filename in sorted(os.listdir(img_dir)):  # sorted for consistent ordering
@@ -39,7 +41,9 @@ def process_images():
                     gif_counter += 1
                 
                 os.rename(filepath, new_filepath)
+                print(f'{filename} -> {new_filename}')
                 gallery_content.append(f"![](./img/{new_filename})")
+                url_links.append("- " + url + new_filename)
                 gif_counter += 1
             
             # 处理其他图片文件（转为PNG）
@@ -60,7 +64,9 @@ def process_images():
                 
                 if filepath != new_filepath:  # 避免删除新文件
                     os.remove(filepath)
+                print(f'{filename} -> {new_filename}')
                 gallery_content.append(f"![](./img/{new_filename})")
+                url_links.append("- " + url + new_filename)
                 img_counter += 1
                 
         except Exception as e:
@@ -71,7 +77,7 @@ def process_images():
     gallery_content.append("{% endgallery %}")
     
     # 读取并更新index.txt
-    index_file = 'index.md'
+    index_file = os.path.join(os.path.dirname(__file__), 'index.md')
     try:
         # 读取现有内容
         if os.path.exists(index_file):
@@ -89,6 +95,16 @@ def process_images():
             
     except Exception as e:
         print(f"Error writing to {index_file}: {str(e)}")
+    
+    url_path = os.path.join(os.path.dirname(__file__), 'url.txt')
+    
+    try:
+        with open(url_path, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(url_links))
+        print("URL links have been saved to url.txt")
+    except Exception as e:
+        print(f"Error writing to url.txt: {str(e)}")
+    
 
 if __name__ == "__main__":
     process_images()
