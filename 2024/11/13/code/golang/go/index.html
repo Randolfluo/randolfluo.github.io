@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>go-blog | Randolfluo's blog</title><meta name="author" content="Randolf luo"><meta name="copyright" content="Randolf luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="go-blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go-blog">
+<meta property="og:url" content="http://randolfluo.github.io/2024/11/13/code/golang/go/index.html">
+<meta property="og:site_name" content="Randolfluo&#39;s blog">
+<meta property="og:description" content="go-blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://randolfluo.top/album/wallpaper/img/img_38.png">
+<meta property="article:published_time" content="2024-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-12T16:00:00.000Z">
+<meta property="article:author" content="Randolf luo">
+<meta property="article:tag" content="go">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://randolfluo.top/album/wallpaper/img/img_38.png"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/2024/11/13/code/golang/go/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Randolf luo","link":"链接: ","source":"来源: Randolfluo's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'go-blog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">116</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">28</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://randolfluo.top/album/wallpaper/img/img_38.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Randolfluo's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">go-blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">go-blog</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-12T16:00:00.000Z" title="发表于 2024-11-13 00:00:00">2024-11-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-12T16:00:00.000Z" title="更新于 2024-11-13 00:00:00">2024-11-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/go/">go</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>go进阶<a target="_blank" rel="noopener" href="https://www.yuque.com/aceld/golang">Golang修养之路 (yuque.com)</a></p>
+<h3 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h3><h2 id="前台："><a href="#前台：" class="headerlink" title="前台："></a>前台：</h2><h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>redis：是一个高性能的key-value数据库，将数据存储在内存中，方便高效读写</p>
+<ul>
+<li><p>Redis默认支持16个数据库</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liqingtx/article/details/60330555">超强、超详细Redis入门教程_这篇文章主要介绍了超强、超详细redis入门教程,本文详细介绍了redis数据库各个方-CSDN博客</a></p>
+</li>
+<li><p>支持<strong>持久化</strong></p>
+<ul>
+<li><code>RDB&lt;快照持久化: 每隔一段时间写入&gt;</code></li>
+<li><code>AOF&lt;追加文件持久化：每个写都会追加到AOF文件s&gt;</code></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ll594317566/article/details/109215575">Redis的两种持久化RDB和AOF（超详细）_rdb aof-CSDN博客</a></li>
+<li></li>
+</ul>
+</li>
+<li><p><strong>主从复制：</strong>允许将数据从一个 Redis 服务器（称为“主节点”）复制到一个或多个 Redis 服务器（称为“从节点”），可用于数据冗余，故障转移，分散节点提高读性能。</p>
+</li>
+<li><strong>高可用和分布式：</strong></li>
+</ul>
+<h2 id="后台："><a href="#后台：" class="headerlink" title="后台："></a>后台：</h2><h3 id="JSON-Web-Tokens-JWT-鉴权"><a href="#JSON-Web-Tokens-JWT-鉴权" class="headerlink" title="JSON Web Tokens (JWT)鉴权"></a>JSON Web Tokens (JWT)鉴权</h3><p>通过JSON形式作为Web应用中的令牌</p>
+<ul>
+<li>认证鉴权</li>
+<li>信息交换</li>
+</ul>
+<p>JWT与Session的区别</p>
+<ul>
+<li><strong>跨域问题</strong>：Session使用Cookie，而Cookie无法跨域，JWT没有这个问题。</li>
+<li><strong>服务器开销</strong>：Session需要在服务器存储每个用户的登录信息，而JWT自身携带用户信息，不需要额外的服务器存储空间。</li>
+<li><strong>分布式系统</strong>：JWT更适合分布式系统，因为它是无状态的</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://golang-jwt.github.io/jwt/">https://golang-jwt.github.io/jwt/</a></p>
+<p><a target="_blank" rel="noopener" href="https://jwt.io/introduction">https://jwt.io/introduction</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zichliang/p/17303759.html">Golang 一日一库之jwt-go - 始識 - 博客园 (cnblogs.com)</a></p>
+<h3 id="CASBIN"><a href="#CASBIN" class="headerlink" title="CASBIN"></a>CASBIN</h3><ul>
+<li>访问控制框架，支持多种访问控制模型。</li>
+<li>这个项目基于角色的访问控制（RBAC, Role-Based Access Control）是一种广泛使用的访问控制机制，它通过将权限与角色关联，再将角色分配给用户，从而实现对资源的访问控制</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p> 前后端分离的核心：后台提供数据，前端负责显示</p>
+<h3 id="RESTful-风格"><a href="#RESTful-风格" class="headerlink" title="RESTful 风格"></a>RESTful 风格</h3><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html">RESTful API 最佳实践 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+<p>RESTful 的核心思想就是，客户端发出的数据操作指令都是”动词 + 宾语”的结构。</p>
+<h3 id="APIFOX"><a href="#APIFOX" class="headerlink" title="APIFOX"></a>APIFOX</h3><p>集成的测试工具：Apifox = Postman + Swagger + Mock + JMeter</p>
+<p>前端：</p>
+<ul>
+<li>Swagger：通常用于生成 API 文档，并为前端开发人员提供接口的说明和交互功能。</li>
+<li>Mock：用于模拟后端 API 响应。</li>
+</ul>
+<p>后端：</p>
+<ul>
+<li>Postman：验证 API 的正确性、性能和响应数据。</li>
+<li>JMeter：后端的性能和压力测试。</li>
+</ul>
+<h3 id="docker-compose-amp-k8s"><a href="#docker-compose-amp-k8s" class="headerlink" title="docker compose&amp;k8s"></a>docker compose&amp;k8s</h3><p><a target="_blank" rel="noopener" href="https://docker-practice.github.io/zh-cn/">https://docker-practice.github.io/zh-cn/</a></p>
+<ul>
+<li>docker compose用于本地简单的容器编排</li>
+<li>k8s适用于适合于构建分布式、高可用的生产环境。</li>
+</ul>
+<h3 id="nginx-amp-apache"><a href="#nginx-amp-apache" class="headerlink" title="nginx&amp;apache"></a>nginx&amp;apache</h3><p> <strong>nginx</strong></p>
+<ul>
+<li>nginx适合处理静态内容</li>
+<li>可作反向代理服务器、负载均衡器</li>
+</ul>
+<p><strong>apache</strong></p>
+<ul>
+<li><p>apache适合处理动态内容</p>
+</li>
+<li><p>Apache 采用多线程模型，每个请求由一个独立的线程处理。</p>
+</li>
+</ul>
+<h3 id="nuxt3"><a href="#nuxt3" class="headerlink" title="nuxt3"></a>nuxt3</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">├── global         # 用于存储全局变量或整个应用程序中共享的设置的目录或包</span><br><span class="line">├── handle         # 用于处理请求的目录或包，管理传入的 HTTP 请求</span><br><span class="line">├── helper.go      # 包含辅助功能的文件，用于协助代码库中的各种任务</span><br><span class="line">├── manager.go     # 负责管理应用程序核心组件的文件，可能处理逻辑、协调或资源管理</span><br><span class="line">├── manager_test.go# 针对 `manager.go` 中实现功能的单元测试文件</span><br><span class="line">├── middleware     # 包含中间件功能的目录或包，应用于 HTTP 请求，如日志记录、身份验证等</span><br><span class="line">├── model          # 用于数据模型的目录或包，通常表示数据库实体或数据结构</span><br><span class="line">└── utils          # 包含可以在整个应用程序中复用的工具/辅助函数的目录或包</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2024-8-16"><a href="#2024-8-16" class="headerlink" title="2024/8/16"></a>2024/8/16</h3><h4 id="命令行参数解析-amp-配置文件读取"><a href="#命令行参数解析-amp-配置文件读取" class="headerlink" title="命令行参数解析&amp;配置文件读取"></a>命令行参数解析&amp;配置文件读取</h4><ul>
+<li>flag：解析命令行参数</li>
+<li>viper：用于解析配置文件<ul>
+<li>viper有优先使用环境变量的配置，主要是方便程序在不同开发环境间迁移</li>
+</ul>
+</li>
+</ul>
+<h3 id="2024-8-18"><a href="#2024-8-18" class="headerlink" title="2024/8/18"></a>2024/8/18</h3><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h4><p><a target="_blank" rel="noopener" href="https://mermaid.nodejs.cn/syntax/entityRelationshipDiagram.html">https://mermaid.nodejs.cn/syntax/entityRelationshipDiagram.html</a></p>
+<h5 id="user"><a href="#user" class="headerlink" title="user"></a>user</h5><p> 权限控制: 7 张表（4 模型 + 3 关联）</p>
+<ul>
+<li>UserAuth（用户认证）：用户的基本信息。</li>
+<li>Role（角色）：定义系统中的各种角色。</li>
+<li>Resource（资源）：定义需要权限控制的资源，如API端点。</li>
+<li>Menu（菜单）：定义系统的菜单结构，支持多级菜单。</li>
+<li>用户认证：角色     1：n</li>
+<li>角色：资源            1：n</li>
+<li>角色：菜单            1：n</li>
+</ul>
+<p>//TODO 关系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">erDiagram</span><br><span class="line">    USERAUTH ||--o&#123; ROLE : has</span><br><span class="line">    ROLE ||--o&#123; RESOURCE : has</span><br><span class="line">    ROLE ||--o&#123; MENU : has</span><br><span class="line">    </span><br><span class="line">    USERAUTH &#123;</span><br><span class="line">        username  string</span><br><span class="line">        password  string</span><br><span class="line">        loginType  int</span><br><span class="line">        ipAddress  string</span><br><span class="line">        ipSource  string</span><br><span class="line">        lastLoginTime  time</span><br><span class="line">        isDisable  boolean</span><br><span class="line">        isSuper  boolean</span><br><span class="line">        userInfoId  int</span><br><span class="line">        userInfo  USERINFO</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ROLE &#123;</span><br><span class="line">        name  string</span><br><span class="line">        label  string</span><br><span class="line">        isDisable  boolean</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    RESOURCE &#123;</span><br><span class="line">        name  string</span><br><span class="line">        parentId  int</span><br><span class="line">        url  string</span><br><span class="line">        method  string</span><br><span class="line">        anonymous  boolean</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    MENU &#123;</span><br><span class="line">        parentId  int</span><br><span class="line">        name  string</span><br><span class="line">        path  string</span><br><span class="line">        component  string</span><br><span class="line">        icon  string</span><br><span class="line">        orderNum  int8</span><br><span class="line">        redirect  string</span><br><span class="line">        catalogue  boolean</span><br><span class="line">        hidden  boolean</span><br><span class="line">        keepAlive  boolean</span><br><span class="line">        external  boolean</span><br><span class="line">        externalLink  string</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Article"><a href="#Article" class="headerlink" title="Article"></a>Article</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">erDiagram</span><br><span class="line">    Article &#123;</span><br><span class="line">        int id PK</span><br><span class="line">        string title</span><br><span class="line">        string desc</span><br><span class="line">        string content</span><br><span class="line">        string img</span><br><span class="line">        int type</span><br><span class="line">        int status</span><br><span class="line">        bool is_top</span><br><span class="line">        bool is_delete</span><br><span class="line">        string original_url</span><br><span class="line">        int category_id FK</span><br><span class="line">        int user_id FK</span><br><span class="line">    &#125;</span><br><span class="line">    Tag &#123;</span><br><span class="line">        int id PK</span><br><span class="line">        string name</span><br><span class="line">    &#125;</span><br><span class="line">    Category &#123;</span><br><span class="line">        int id PK</span><br><span class="line">        string name</span><br><span class="line">    &#125;</span><br><span class="line">    UserAuth &#123;</span><br><span class="line">        int id PK</span><br><span class="line">        string username</span><br><span class="line">    &#125;</span><br><span class="line">    ArticleTag &#123;</span><br><span class="line">        int article_id FK</span><br><span class="line">        int tag_id FK</span><br><span class="line">    &#125;</span><br><span class="line">    BlogArticleVO &#123;</span><br><span class="line">        int comment_count</span><br><span class="line">        int like_count</span><br><span class="line">        int view_count</span><br><span class="line">    &#125;</span><br><span class="line">    ArticlePaginationVO &#123;</span><br><span class="line">        int id</span><br><span class="line">        string img</span><br><span class="line">        string title</span><br><span class="line">    &#125;</span><br><span class="line">    RecommendArticleVO &#123;</span><br><span class="line">        int id</span><br><span class="line">        string img</span><br><span class="line">        string title</span><br><span class="line">        datetime created_at</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Article ||--o&#123; ArticleTag : has</span><br><span class="line">    Tag ||--o&#123; ArticleTag : has</span><br><span class="line">    Article ||--o| Category : belongs_to</span><br><span class="line">    Article ||--o| UserAuth : authored_by</span><br><span class="line">    Article ||--|| BlogArticleVO : extends</span><br><span class="line">    BlogArticleVO ||--|&#123; ArticlePaginationVO : has</span><br><span class="line">    BlogArticleVO ||--|&#123; RecommendArticleVO : has</span><br></pre></td></tr></table></figure>
+<h4 id="gorm"><a href="#gorm" class="headerlink" title="gorm"></a>gorm</h4><p><a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/models.html">https://gorm.io/zh_CN/docs/models.html</a></p>
+<ul>
+<li><strong>ORM（Object-Relational Mapping，对象关系映射）</strong>是一种在面向对象编程语言中实现数据持久化的一种技术。它允许开发者以面向对象的方式来操作数据库，而无需编写原始的SQL语句。</li>
+<li><code>gen</code> (代码生成器)：生成与数据库表对应的模型和基本的数据库操作方法。</li>
+<li><code>DAO</code> 层的主要职责是抽象和封装对底层数据源（如数据库、文件系统或其他持久化机制）的访问。</li>
+<li><strong>客户端请求 -&gt; Servlet层 -&gt; Service层 -&gt; Dao层 -&gt; 数据库</strong></li>
+<li>当你使用 GORM 并调用 <code>AutoMigrate</code> 方法时，GORM 会检查数据库中是否存在指定的表，如果不存在，GORM 会根据提供的模型创建相应的表。</li>
+<li>软删除：实际未删除，只是普通查找不返回该链接，可以通过设置标志位实现</li>
+</ul>
+<blockquote>
+<p>预加载（Eager Loading）和连接（Joining）的区别：</p>
+<ul>
+<li><p>N+1 查询问题：查询一个对象集合后对该集合的每个对象再进行<code>分别</code>的查询（1+n）</p>
+</li>
+<li><p>Preload：查询一个对象集合后对该集合的每个对象再进行<code>一次总体</code>的查询（1+1）</p>
+</li>
+<li><p><strong><code>Preload</code> 适合</strong>：</p>
+<ul>
+<li>数据关系复杂，多个关联关系。</li>
+<li>需要避免数据冗余问题，返回的数据不希望有重复。</li>
+<li>查询效率和性能不是最优先考虑的场景。</li>
+</ul>
+</li>
+<li><p><strong><code>Joins</code> 适合</strong>：</p>
+<ul>
+<li><p>表的关系相对简单，适合通过一次 <code>JOIN</code> 查询获取结果。</p>
+</li>
+<li><p>数据量较大，希望减少查询次数，提高性能。</p>
+</li>
+<li><p>需要尽量在一次查询中获取所有相关数据的场景。</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="slog"><a href="#slog" class="headerlink" title="slog"></a>slog</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000044992581">后端 - 万字解析 Go 官方结构化日志包 slog - 江湖十年 - SegmentFault 思否</a></p>
+<p><code>Logger</code> 又被称为 <code>前端</code>，<code>Handler</code> 被称为 <code>后端</code>，而 <code>Record</code> 用来表示一条日志。</p>
+<p>前端 <code>Logger</code> 直接面向用户侧，我们可以对其进行二次封装，来定制自己的用户 API。</p>
+<p>后端 <code>Handler</code> 可以统一日志处理接口，我们也可以在自定义的 <code>Handler</code> 中很方便的集成如 <code>zap</code>、<code>zerolog</code> 等第三方日志库。你可以在 [Go Wiki: Resources for slog</p>
+<h3 id="gin"><a href="#gin" class="headerlink" title="gin"></a>gin</h3><p>重量级来了！</p>
+<p>面向切面编程AOP(Aspect-Oriented Programming）</p>
+<p>系统实现“高内聚、低耦合”一直是我们程序开发者的追求。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/421999882">什么是面向切面编程? - 知乎 (zhihu.com)</a></p>
+<p>使用<strong>路由组</strong>管理路由：方便不同路由的分组和中间件管理。</p>
+<h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><ul>
+<li><p>go提供context包用于在不同协程间传递数据。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rh411P7oN/?spm_id_from=333.788.recommend_more_video.2&amp;vd_source=f59fd02e7da0d60ea4cdebb5e1c5f0d7">golang context该怎么玩儿_哔哩哔哩_bilibili</a></p>
+</li>
+</ul>
+<p><strong>context in gin</strong></p>
+<ul>
+<li><code>gin</code>的<code>Context</code> 是处理 HTTP 请求的核心数据结构。它包含了请求和响应的所有信息，以及处理请求的中间件链。</li>
+</ul>
+<ol>
+<li>当一个 HTTP 请求到达 Gin 服务器时，它首先被分配到一个 <code>Context</code> 对象。</li>
+<li>随后进入中间件链。每个中间件可以对 <code>Context</code> 进行读取和修改，执行特定的逻辑。(<code>c.next()进入下一中间件</code>)</li>
+<li>处理函数生成响应，并通过 <code>Context</code> 返回给客户端。</li>
+<li>在响应返回给客户端之前，中间件链会逆序执行。(<code>c.next()返回</code>)</li>
+</ol>
+<p>为什么不设置全局变量而是使用上下文(context ctx)传递数据</p>
+<ul>
+<li><strong>线程安全</strong>：全局变量可能需要锁保护。</li>
+<li><strong>中间件链</strong>：Gin 框架使用中间件链来处理请求。通过在上下文中传递数据，可以在链中的任何位置访问或修改这些数据，而不需要在中间件之间显式传递参数。</li>
+<li><strong>数据隔离</strong>：在处理并发请求时，每个请求可能需要不同的数据副本。上下文允许每个请求拥有自己的数据副本，从而实现数据隔离。</li>
+<li>…….</li>
+</ul>
+<h4 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h4><p>中间件：中间件和处理函数是按照它们被注册的顺序执行的。</p>
+<p>Gin框架默认提供了两个中间件：Logger 和 Recovery。    </p>
+<ol>
+<li><p><strong>全局中间件（Global Middleware）</strong>：</p>
+<ul>
+<li><p>对所有请求都生效。</p>
+</li>
+<li><p>使用 <code>r.Use()</code> 方法添加到 <code>*gin.Engine</code> 实例上。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>路由组中间件（Group Middleware）</strong>：</p>
+<ul>
+<li>针对特定路由组，只对注册在该路由组下的所有路由生效。</li>
+<li>使用 <code>group.Use()</code> 方法添加到 <code>*gin.RouterGroup</code> 实例上。</li>
+</ul>
+</li>
+<li><p><strong>自定义中间件（Custom Middleware）</strong>：</p>
+</li>
+<li><p><strong>第三方中间件（Third-Party Middleware）</strong>：</p>
+<ul>
+<li>可在 <code>github.com/gin-gonic/contrib</code> 寻找对应的库。</li>
+</ul>
+</li>
+</ol>
+<p><strong>单个session和多个session的区别：</strong>单个session用于</p>
+<p>//TODO</p>
+<p>自定义组件，主要是增加一些功能和替换一些组件的条件检查、以及使用slog替换日志输出。</p>
+<p><strong>基于 cookie 的 session:</strong></p>
+<ul>
+<li>当用户首次访问应用程序时，服务器会创建一个新的 Session，并生成一个唯一的 Session ID。</li>
+<li>这个 Session ID 被发送到客户端浏览器，并存储在一个 Cookie 中。Cookie 通常包含 Session ID 和一些属性，如路径、域、过期时间、安全标志等。</li>
+</ul>
+<p>用户进行后续请求时，浏览器会自动在请求的 HTTP Header 中携带这个 Cookie，服务器通过解析 Cookie 中的 Session ID 来检索对应的 Session 数据。</p>
+<h4 id="CROS"><a href="#CROS" class="headerlink" title="CROS"></a>CROS</h4><ul>
+<li><p><code>同源策略（Same-Origin Policy）</code>：禁止来自不同域的JavaScript脚本与另一个域的资源进行交互。</p>
+</li>
+<li><p><code>同源</code>：相同的协议（protocol）、域名（host）和端口号（port）。</p>
+</li>
+<li><code>CROS</code>:</li>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">浏览器同源政策及其规避方法 - 阮一峰的网络日志 (ruanyifeng.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解 - 阮一峰的网络日志 (ruanyifeng.com)</a></li>
+</ul>
+<h4 id="recovery"><a href="#recovery" class="headerlink" title="recovery"></a>recovery</h4><ul>
+<li><code>recover</code> 的实现是内置的，不在 Go 的源代码中直接可见，因为它是编译器和运行时的一部分。</li>
+<li><code>recover</code> 必须在 <code>defer</code> 语句中调用，并且只能恢复当前的 panic。</li>
+<li><code>defer</code> 延迟调用语句的用处是在程序执行结束，甚至是崩溃后，仍然会被调用的语句</li>
+</ul>
+<blockquote>
+<p>为什么recover必须在defer语句中调用？</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2337706">从源码解析Go语言中recover为什么一定要放在defer中执行-腾讯云开发者社区-腾讯云 (tencent.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1445033#:~:text=当程序遇到无法恢复的错误情况时，可以使用 panic,来中断当前的执行流程，并开始逐层向上回溯（unwind）调用栈，直到遇到一个 recover 调用或者程序退出。">Go语言中的异常处理：理解panic与recover-阿里云开发者社区 (aliyun.com)</a></li>
+<li>当<code>panic</code>被触发时，程序会开始回溯调用栈（栈展开（Stack Unwinding）），直到遇到一个<code>defer</code>函数调用中包含<code>recover</code>。</li>
+<li>我们知道，当一个函数被调用时，若其执行出现错误（如c语言返回-1），我们不可能假设该函数执行成功，而是应该释放资源回溯到能处理该错误的函数。</li>
+</ul>
+</blockquote>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><h3 id="go"><a href="#go" class="headerlink" title="go"></a>go</h3><h4 id="空结构体"><a href="#空结构体" class="headerlink" title="空结构体"></a>空结构体</h4><ul>
+<li>空结构体不占用空间，可用作占位映射值</li>
+<li>空结构体可以作为一个接口的唯一实现，任何具有空结构体类型的类型都自动满足了该接口</li>
+</ul>
+<h3 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h3><h3 id="util"><a href="#util" class="headerlink" title="util"></a>util</h3><h4 id="encrypt"><a href="#encrypt" class="headerlink" title="encrypt"></a>encrypt</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/flydean/p/15292400.html">密码学系列之:bcrypt加密算法详解 - flydean - 博客园 (cnblogs.com)</a></li>
+<li></li>
+</ul>
+<h3 id="context-1"><a href="#context-1" class="headerlink" title="context"></a>context</h3><ul>
+<li>context用于在不同协程中传递数据</li>
+</ul>
+<p>context定义</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Context <span class="keyword">interface</span> &#123;</span><br><span class="line">	Done() &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span>&#123;&#125; <span class="comment">// 返回一个channel，用于通知当前Context的取消，父协程通过监听管道判断是否被关闭</span></span><br><span class="line"></span><br><span class="line">	Err() <span class="type">error</span> <span class="comment">// 返回当前Context的取消原因</span></span><br><span class="line"></span><br><span class="line">	Deadline() (deadline time.Time, ok <span class="type">bool</span>) <span class="comment">//  返回当前Context的截止时间</span></span><br><span class="line"></span><br><span class="line">	Value(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">interface</span>&#123;&#125; <span class="comment">// 返回传递的键值对</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="context-TODO-和-context-Background"><a href="#context-TODO-和-context-Background" class="headerlink" title="context.TODO()和 context.Background()"></a>context.TODO()和 context.Background()</h4><ul>
+<li><code>context.Background()</code> 是一个通用的构建块，用于构建整个 <code>Context</code> 树的起点。</li>
+<li><code>context.TODO()</code> 是一个临时的占位符，用于标记代码中尚未处理的部分。</li>
+</ul>
+<h4 id="传递数据"><a href="#传递数据" class="headerlink" title="传递数据"></a>传递数据</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f1</span><span class="params">(ctx context.Context)</span></span> context.Context &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> context.WithValue(ctx, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;Randolfluo&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// context可用于传递数据，如用户信息，请求ID等</span></span><br><span class="line">	backctx1 := context.Background() <span class="comment">//创建一个background context，作为context的根</span></span><br><span class="line">	f1ret := f1(backctx1)		<span class="comment">//返回新context</span></span><br><span class="line">	fmt.Println(f1ret.Value(<span class="string">&quot;name&quot;</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="取消派生的context（timeout，deadline）"><a href="#取消派生的context（timeout，deadline）" class="headerlink" title="取消派生的context（timeout，deadline）"></a>取消派生的context（timeout，deadline）</h4><ul>
+<li>可以设置取消条件（如网络请求超时）</li>
+<li>一旦 <code>Context</code> 被取消或超时，任何监听 <code>ctx.Done()</code> 通道的 goroutine 都会收到一个通知。</li>
+<li><strong>通道关闭时，所有等待接收的协程都会被唤醒。</strong>因此可以在函数、协程、主函数打印状态</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;context&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">f1</span><span class="params">(ctx context.Context)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		<span class="keyword">for</span> &#123;</span><br><span class="line">			<span class="keyword">select</span> &#123;</span><br><span class="line">			<span class="keyword">case</span> &lt;-ctx.Done():</span><br><span class="line">				fmt.Println(<span class="string">&quot;goroutine done&quot;</span>)</span><br><span class="line">				<span class="keyword">return</span></span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				fmt.Println(<span class="string">&quot;114514&quot;</span>)</span><br><span class="line">				time.Sleep(time.Millisecond * <span class="number">100</span>)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">select</span> &#123;</span><br><span class="line">	<span class="keyword">case</span> &lt;-ctx.Done():		</span><br><span class="line">		fmt.Println(<span class="string">&quot;timeout&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	backctx1 := context.Background()</span><br><span class="line"></span><br><span class="line">	ctx, cancel := context.WithTimeout(backctx1, time.Millisecond*<span class="number">500</span>)</span><br><span class="line">	<span class="keyword">defer</span> cancel() <span class="comment">// 手动取消上下文，确保退出时调用，释放资源。</span></span><br><span class="line">	f1(ctx)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">select</span> &#123;</span><br><span class="line">	<span class="keyword">case</span> &lt;-ctx.Done():	</span><br><span class="line">		fmt.Println(<span class="string">&quot;f1 done&quot;</span>)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(ctx.Err())  <span class="comment">// context deadline exceeded</span></span><br><span class="line">	time.Sleep(time.Second) <span class="comment">//在主Goroutine结束之后其他的所有Goroutine都会直接退出,因此我们需要等待协程执行完毕</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://go.dev/blog/context">https://go.dev/blog/context</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rh411P7oN/?spm_id_from=333.788.recommend_more_video.2&amp;vd_source=f59fd02e7da0d60ea4cdebb5e1c5f0d7">golang context该怎么玩儿_哔哩哔哩_bilibili</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io">Randolf luo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://randolfluo.github.io/2024/11/13/code/golang/go/">http://randolfluo.github.io/2024/11/13/code/golang/go/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://randolfluo.github.io" target="_blank">Randolfluo's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/go/">go</a></div><div class="post-share"><div class="social-share" data-image="https://randolfluo.top/album/wallpaper/img/img_38.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/11/record/2024_11_11/" title="记一次2024ICPC杭州站"><img class="cover" src="https://randolfluo.top/album/wallpaper/img/img_22.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">记一次2024ICPC杭州站</div></div><div class="info-2"><div class="info-item-1">2024ICPC杭州站————一次悲惨经历</div></div></div></a><a class="pagination-related" href="/2025/02/18/record/%E8%AE%B0%EF%BC%9A2025-2/" title="记：2025-2"><img class="cover" src="https://randolfluo.top/album/wallpaper/img/img_36.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">记：2025-2</div></div><div class="info-2"><div class="info-item-1">记：2025-2</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/08/08/code/golang/go%E5%8D%B3%E6%97%B6%E9%80%9A%E4%BF%A1/" title="go即时通信"><img class="cover" src="https://randolfluo.top/album/wallpaper/img/img_17.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-08</div><div class="info-item-2">go即时通信</div></div><div class="info-2"><div class="info-item-1">go即时通信</div></div></div></a><a class="pagination-related" href="/2024/08/08/code/golang/go%E5%9F%BA%E7%A1%80/" title="golang基础"><img class="cover" src="https://randolfluo.top/album/wallpaper/img/img_38.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-08</div><div class="info-item-2">golang基础</div></div><div class="info-2"><div class="info-item-1">golang基础</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Randolf luo</div><div class="author-info-description">true</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">116</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">28</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Randolfluo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:lrj3216610@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">项目简介</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">前台：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#redis"><span class="toc-number">1.</span> <span class="toc-text">redis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">后台：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-Web-Tokens-JWT-%E9%89%B4%E6%9D%83"><span class="toc-number">1.</span> <span class="toc-text">JSON Web Tokens (JWT)鉴权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CASBIN"><span class="toc-number">2.</span> <span class="toc-text">CASBIN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number"></span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RESTful-%E9%A3%8E%E6%A0%BC"><span class="toc-number">1.</span> <span class="toc-text">RESTful 风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#APIFOX"><span class="toc-number">2.</span> <span class="toc-text">APIFOX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose-amp-k8s"><span class="toc-number">3.</span> <span class="toc-text">docker compose&amp;k8s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-amp-apache"><span class="toc-number">4.</span> <span class="toc-text">nginx&amp;apache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nuxt3"><span class="toc-number">5.</span> <span class="toc-text">nuxt3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-8-16"><span class="toc-number">6.</span> <span class="toc-text">2024&#x2F;8&#x2F;16</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90-amp-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-number">6.1.</span> <span class="toc-text">命令行参数解析&amp;配置文件读取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-8-18"><span class="toc-number">7.</span> <span class="toc-text">2024&#x2F;8&#x2F;18</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">8.</span> <span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1"><span class="toc-number">8.1.</span> <span class="toc-text">设计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#user"><span class="toc-number">8.1.1.</span> <span class="toc-text">user</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Article"><span class="toc-number">8.2.</span> <span class="toc-text">Article</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gorm"><span class="toc-number">8.3.</span> <span class="toc-text">gorm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slog"><span class="toc-number">9.</span> <span class="toc-text">slog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gin"><span class="toc-number">10.</span> <span class="toc-text">gin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#context"><span class="toc-number">11.</span> <span class="toc-text">context</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-number">11.1.</span> <span class="toc-text">中间件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CROS"><span class="toc-number">11.2.</span> <span class="toc-text">CROS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#recovery"><span class="toc-number">11.3.</span> <span class="toc-text">recovery</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">11.4.</span> <span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#go"><span class="toc-number">12.</span> <span class="toc-text">go</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">12.1.</span> <span class="toc-text">空结构体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swagger"><span class="toc-number">13.</span> <span class="toc-text">swagger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#util"><span class="toc-number">14.</span> <span class="toc-text">util</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#encrypt"><span class="toc-number">14.1.</span> <span class="toc-text">encrypt</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#context-1"><span class="toc-number">15.</span> <span class="toc-text">context</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#context-TODO-%E5%92%8C-context-Background"><span class="toc-number">15.1.</span> <span class="toc-text">context.TODO()和 context.Background()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">15.2.</span> <span class="toc-text">传递数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E6%B4%BE%E7%94%9F%E7%9A%84context%EF%BC%88timeout%EF%BC%8Cdeadline%EF%BC%89"><span class="toc-number">15.3.</span> <span class="toc-text">取消派生的context（timeout，deadline）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/19/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“树和二叉树”的算法训练"><img src="https://randolfluo.top/album/wallpaper/img/gif_7.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于“树和二叉树”的算法训练"/></a><div class="content"><a class="title" href="/2025/08/19/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“树和二叉树”的算法训练">基于“树和二叉树”的算法训练</a><time datetime="2025-08-18T16:00:00.000Z" title="发表于 2025-08-19 00:00:00">2025-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/19/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E5%9B%BE%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“图”的算法训练"><img src="https://randolfluo.top/album/wallpaper/img/gif_5.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于“图”的算法训练"/></a><div class="content"><a class="title" href="/2025/08/19/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E5%9B%BE%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“图”的算法训练">基于“图”的算法训练</a><time datetime="2025-08-18T16:00:00.000Z" title="发表于 2025-08-19 00:00:00">2025-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/06/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E9%93%BE%E8%A1%A8%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“链表”的算法训练"><img src="https://randolfluo.top/album/wallpaper/img/gif_7.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于“链表”的算法训练"/></a><div class="content"><a class="title" href="/2025/08/06/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E9%93%BE%E8%A1%A8%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“链表”的算法训练">基于“链表”的算法训练</a><time datetime="2025-08-05T16:00:00.000Z" title="发表于 2025-08-06 00:00:00">2025-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/06/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E9%A1%BA%E5%BA%8F%E8%A1%A8%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“顺序表”的算法训练"><img src="https://randolfluo.top/album/wallpaper/img/img_10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于“顺序表”的算法训练"/></a><div class="content"><a class="title" href="/2025/08/06/22408/408%E7%AE%97%E6%B3%95/%E5%9F%BA%E4%BA%8E%E2%80%9C%E9%A1%BA%E5%BA%8F%E8%A1%A8%E2%80%9D%E7%9A%84%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" title="基于“顺序表”的算法训练">基于“顺序表”的算法训练</a><time datetime="2025-08-05T16:00:00.000Z" title="发表于 2025-08-06 00:00:00">2025-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/26/record/%E8%AE%B0%EF%BC%9A2025-6/" title="记：2025-6"><img src="https://randolfluo.top/album/wallpaper/img/img_34.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记：2025-6"/></a><div class="content"><a class="title" href="/2025/06/26/record/%E8%AE%B0%EF%BC%9A2025-6/" title="记：2025-6">记：2025-6</a><time datetime="2025-06-25T16:00:00.000Z" title="发表于 2025-06-26 00:00:00">2025-06-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://randolfluo.top/album/wallpaper/img/img_38.png);"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2026 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is Randolfluo</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
