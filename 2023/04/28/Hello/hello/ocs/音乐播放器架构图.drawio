@@ -1,0 +1,221 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram id="m51ll4Sr5C9XlumHTEp-" name="第 1 页">
+    <mxGraphModel dx="1554" dy="913" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#333;" value="&lt;b&gt;RLMusic 项目架构图&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="400" x="265" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;arcSize=0;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="80" width="900" x="40" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#333;" value="用户界面层" vertex="1">
+          <mxGeometry height="20" width="80" x="50" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="浏览器页面" vertex="1">
+          <mxGeometry height="40" width="100" x="150" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="electron" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Electron桌面端" vertex="1">
+          <mxGeometry height="40" width="110" x="280" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="移动端(Capacitor)" vertex="1">
+          <mxGeometry height="40" width="130" x="420" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;arcSize=0;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="83" width="900" x="40" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#333;" value="表现层" vertex="1">
+          <mxGeometry height="20" width="80" x="51.5" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="components" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Vue Components&lt;br&gt;(Login/Player)" vertex="1">
+          <mxGeometry height="50" width="120" x="160" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="router" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Vue Router&lt;br&gt;路由管理" vertex="1">
+          <mxGeometry height="50" width="90" x="300" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="pinia" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Pinia&lt;br&gt;状态管理" vertex="1">
+          <mxGeometry height="50" width="80" x="410" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="axios" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Axios&lt;br&gt;HTTP客户端" vertex="1">
+          <mxGeometry height="50" width="80" x="510" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="interceptor" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="请求拦截器&lt;br&gt;(Token注入/错误处理)" vertex="1">
+          <mxGeometry height="50" width="120" x="620" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;arcSize=0;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="100" width="900" x="40" y="286" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#333;" value="业务逻辑层" vertex="1">
+          <mxGeometry height="20" width="80" x="50" y="296" as="geometry" />
+        </mxCell>
+        <mxCell id="handlers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Handlers&lt;br&gt;(HTTP处理器)" vertex="1">
+          <mxGeometry height="55" width="80" x="157" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-handler" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="AuthHandler&lt;br&gt;(登录/注册)" vertex="1">
+          <mxGeometry height="55" width="80" x="257" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="user-handler" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="UserHandler&lt;br&gt;(用户管理)" vertex="1">
+          <mxGeometry height="55" width="80" x="357" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="music-handler" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="MusicHandler&lt;br&gt;(音乐管理)" vertex="1">
+          <mxGeometry height="55" width="80" x="457" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="playlist-handler" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="PlaylistHandler&lt;br&gt;(歌单管理)" vertex="1">
+          <mxGeometry height="55" width="91" x="557" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="middleware" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Middleware&lt;br&gt;(JWT认证/CORS/限流)" vertex="1">
+          <mxGeometry height="55" width="100" x="657" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="jwt-service" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="JWT Service&lt;br&gt;(Token生成/验证)" vertex="1">
+          <mxGeometry height="55" width="100" x="777" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4-bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;arcSize=0;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="71" width="900" x="40" y="398" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#333;" value="数据访问层" vertex="1">
+          <mxGeometry height="20" width="80" x="50" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="models" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="Models&lt;br&gt;(User/Song/Playlist)" vertex="1">
+          <mxGeometry height="40" width="120" x="160" y="414" as="geometry" />
+        </mxCell>
+        <mxCell id="dao" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="DAO层&lt;br&gt;(数据访问对象)" vertex="1">
+          <mxGeometry height="40" width="100" x="300" y="414" as="geometry" />
+        </mxCell>
+        <mxCell id="auto-migrate" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="AutoMigrate&lt;br&gt;(自动迁移)" vertex="1">
+          <mxGeometry height="40" width="90" x="420" y="414" as="geometry" />
+        </mxCell>
+        <mxCell id="soft-delete" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="软删除&lt;br&gt;(is_delete)" vertex="1">
+          <mxGeometry height="40" width="90" x="530" y="414" as="geometry" />
+        </mxCell>
+        <mxCell id="local-file" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="本地文件存储&lt;br&gt;(音乐/图片上传)" vertex="1">
+          <mxGeometry height="40" width="100" x="640" y="414" as="geometry" />
+        </mxCell>
+        <mxCell id="layer5-bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;arcSize=0;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="70" width="900" x="40" y="489" as="geometry" />
+        </mxCell>
+        <mxCell id="layer5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#333;" value="数据库层" vertex="1">
+          <mxGeometry height="20" width="80" x="50" y="494" as="geometry" />
+        </mxCell>
+        <mxCell id="sqlite" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="SQLite数据库&lt;br&gt;(本地文件存储)" vertex="1">
+          <mxGeometry height="40" width="150" x="150" y="509" as="geometry" />
+        </mxCell>
+        <mxCell id="localstorage" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="LocalStorage&lt;br&gt;(记住密码/用户信息)" vertex="1">
+          <mxGeometry height="40" width="150" x="360" y="509" as="geometry" />
+        </mxCell>
+        <mxCell id="sessionstorage" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="SessionStorage&lt;br&gt;(Token存储)" vertex="1">
+          <mxGeometry height="40" width="120" x="540" y="509" as="geometry" />
+        </mxCell>
+        <mxCell id="file-storage" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontSize=13;" value="文件系统&lt;br&gt;(音乐/图片资源)" vertex="1">
+          <mxGeometry height="40" width="120" x="690" y="509" as="geometry" />
+        </mxCell>
+        <mxCell id="dashed-line1" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666;fontSize=13;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="40" y="150" as="sourcePoint" />
+            <mxPoint x="940" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dashed-line4" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666;fontSize=13;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="40" y="469" as="sourcePoint" />
+            <mxPoint x="940" y="469" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;strokeColor=#333;fontSize=13;" target="components" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="160" />
+              <mxPoint x="220" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" source="electron" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;strokeColor=#333;fontSize=13;" target="components" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="335" y="160" />
+              <mxPoint x="220" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow3" edge="1" parent="1" source="mobile" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;strokeColor=#333;fontSize=13;" target="components" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="475" y="160" />
+              <mxPoint x="220" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow4" edge="1" parent="1" source="components" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="router" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5" edge="1" parent="1" source="router" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="pinia" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow6" edge="1" parent="1" source="pinia" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="axios" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow7" edge="1" parent="1" source="axios" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="interceptor" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow9" edge="1" parent="1" source="handlers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="auth-handler" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow10" edge="1" parent="1" source="auth-handler" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="user-handler" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow11" edge="1" parent="1" source="user-handler" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="music-handler" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow12" edge="1" parent="1" source="music-handler" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="playlist-handler" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow13" edge="1" parent="1" source="middleware" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="jwt-service" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow14" edge="1" parent="1" source="auth-handler" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="dao" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="394" />
+              <mxPoint x="350" y="394" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow15" edge="1" parent="1" source="models" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="dao" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow16" edge="1" parent="1" source="dao" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="auto-migrate" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow17" edge="1" parent="1" source="dao" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="sqlite" value="SQL">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="479" />
+              <mxPoint x="240" y="479" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow18" edge="1" parent="1" source="local-file" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333;fontSize=13;" target="file-storage" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="685" y="479" />
+              <mxPoint x="750" y="479" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tQAJp8bWg8zGTZD4TCVy-10" edge="1" parent="1" source="interceptor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="handlers">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="270" />
+              <mxPoint x="197" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tQAJp8bWg8zGTZD4TCVy-11" connectable="0" parent="tQAJp8bWg8zGTZD4TCVy-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;HTTP请求&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0945" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

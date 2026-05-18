@@ -1,0 +1,70 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram id="uv_mtl2EcK7NMJ1vaJGS" name="第 1 页">
+    <mxGraphModel dx="1072" dy="630" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;arcSize=4;fontSize=15;" value="" vertex="1">
+          <mxGeometry height="80" width="500" x="175" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-txt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=15;fontStyle=1;fontColor=#000000;" value="共享核心层&amp;nbsp;" vertex="1">
+          <mxGeometry height="20" width="130" x="185" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="Vue 3 + TypeScript" vertex="1">
+          <mxGeometry height="38" width="130" x="195" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="Pinia 状态管理" vertex="1">
+          <mxGeometry height="38" width="130" x="355" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="Axios API 封装" vertex="1">
+          <mxGeometry height="38" width="130" x="515" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontSize=11;fontColor=#000000;align=center;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Web / Docker&lt;br&gt;浏览器 + Nginx + Go 容器&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="60" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontSize=15;fontColor=#000000;align=center;verticalAlign=middle;" value="Electron 桌面端&lt;br&gt;Server / Client 双模式&lt;br&gt;IPC 桥接原生能力" vertex="1">
+          <mxGeometry height="80" width="200" x="325" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontSize=15;fontColor=#000000;align=center;verticalAlign=middle;" value="Capacitor 移动端&lt;br&gt;Android WebView&lt;br&gt;原生插件扩展" vertex="1">
+          <mxGeometry height="80" width="200" x="590" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="b-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;arcSize=4;" value="" vertex="1">
+          <mxGeometry height="85" width="730" x="60" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="b-txt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=15;fontStyle=1;fontColor=#000000;" value="后端服务层 (Go + Gin)" vertex="1">
+          <mxGeometry height="20" width="180" x="70" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="RESTful API&lt;br&gt;歌曲 / 歌单 / 用户&amp;nbsp;" vertex="1">
+          <mxGeometry height="45" width="130" x="140" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="SQLite&amp;nbsp;&lt;br&gt;数据持久化" vertex="1">
+          <mxGeometry height="45" width="120" x="290" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="本地文件系统&lt;br&gt;音乐 / 封面 / 日志" vertex="1">
+          <mxGeometry height="45" width="120" x="440" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#000000;fontSize=15;fontColor=#000000;" value="AI 服务&lt;br&gt;LLM&amp;nbsp; / TTS" vertex="1">
+          <mxGeometry height="45" width="100" x="575" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="e-c-p1" edge="1" parent="1" source="c-bg" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;strokeWidth=1;fontSize=15;" target="p1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-c-p2" edge="1" parent="1" source="c-bg" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;strokeWidth=1;fontSize=15;" target="p2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-c-p3" edge="1" parent="1" source="c-bg" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;strokeWidth=1;fontSize=15;" target="p3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p1-b" edge="1" parent="1" source="p1" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.2;entryY=0;strokeColor=#000000;strokeWidth=1;fontSize=15;fontColor=#000000;" target="b-bg" value="HTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p2-b" edge="1" parent="1" source="p2" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;strokeWidth=1;fontSize=15;fontColor=#000000;" target="b-bg" value="HTTP / WebSocket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p3-b" edge="1" parent="1" source="p3" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.8;entryY=0;strokeColor=#000000;strokeWidth=1;fontSize=15;fontColor=#000000;" target="b-bg" value="HTTP / WebSocket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

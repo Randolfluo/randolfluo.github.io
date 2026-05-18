@@ -1,0 +1,129 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram id="CoOmmgMGk9ZQoWxZv8kB" name="第 1 页">
+    <mxGraphModel dx="1072" dy="630" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" value="B/S 架构工作原理图" vertex="1">
+          <mxGeometry height="30" width="300" x="264" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="browser-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;arcSize=3" value="" vertex="1">
+          <mxGeometry height="280" width="200" x="40" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="browser-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" value="浏览器 (Browser)" vertex="1">
+          <mxGeometry height="20" width="160" x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="step1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="1. 输入网址" vertex="1">
+          <mxGeometry height="40" width="160" x="60" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="2. 发送 HTTP 请求" vertex="1">
+          <mxGeometry height="40" width="160" x="60" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="3. 渲染页面" vertex="1">
+          <mxGeometry height="40" width="160" x="60" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1.5;fontSize=14;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="150" as="sourcePoint" />
+            <mxPoint x="140" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1.5;fontSize=14;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="210" as="sourcePoint" />
+            <mxPoint x="140" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="webserver-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;arcSize=3" value="" vertex="1">
+          <mxGeometry height="280" width="140" x="280" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="webserver-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" value="Web 服务器层" vertex="1">
+          <mxGeometry height="20" width="120" x="290" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="Nginx/Apache" vertex="1">
+          <mxGeometry height="45" width="110" x="295" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;" value="认证/安全" vertex="1">
+          <mxGeometry height="40" width="110" x="295" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="cache" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;" value="静态资源缓存" vertex="1">
+          <mxGeometry height="40" width="110" x="295" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="server-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;arcSize=3" value="" vertex="1">
+          <mxGeometry height="280" width="200" x="460" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="server-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" value="应用服务器层" vertex="1">
+          <mxGeometry height="20" width="140" x="490" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="biz-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=14;arcSize=2" value="" vertex="1">
+          <mxGeometry height="110" width="170" x="475" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="biz-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" value="业务逻辑层" vertex="1">
+          <mxGeometry height="15" width="60" x="475" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="1. 接收请求" vertex="1">
+          <mxGeometry height="35" width="150" x="485" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="2. 业务处理" vertex="1">
+          <mxGeometry height="35" width="150" x="485" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="data-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=14;arcSize=2" value="" vertex="1">
+          <mxGeometry height="55" width="170" x="475" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="data-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" value="数据层" vertex="1">
+          <mxGeometry height="15" width="40" x="475" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="2" edge="1" parent="1" source="db" style="edgeStyle=none;html=1;fontSize=14;" target="s3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=6;fillColor=#ffffff;strokeColor=#000000;fontSize=14;" value="数据库" vertex="1">
+          <mxGeometry height="35" width="80" x="520" y="232.5" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=14;strokeWidth=1.5" value="3. 返回响应" vertex="1">
+          <mxGeometry height="35" width="150" x="485" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="req1" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1.5;fontSize=14;" value="HTTP 请求">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="190" as="sourcePoint" />
+            <mxPoint x="295" y="142" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="req2" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1.5;fontSize=14;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="s1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="142" as="sourcePoint" />
+            <mxPoint x="485" y="147" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="to-data" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1;fontSize=14;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="210" as="sourcePoint" />
+            <mxPoint x="560" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="back-resp" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1.5;fontSize=14;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="280" as="sourcePoint" />
+            <mxPoint x="560" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="resp1" edge="1" parent="1" style="strokeColor=#000000;endArrow=classic;endFill=1;strokeWidth=1.5;fontSize=14;dashed=1" value="HTTP 响应">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="310" />
+              <mxPoint x="250" y="270" />
+              <mxPoint x="250" y="250" />
+            </Array>
+            <mxPoint x="485" y="307" as="sourcePoint" />
+            <mxPoint x="220" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="35Rr_cPEFKoaANJFmliM-2" edge="1" parent="1" source="s1" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="327" y="193" as="sourcePoint" />
+            <mxPoint x="377" y="143" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
