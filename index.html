@@ -5,13 +5,13 @@
 <meta property="og:site_name" content="Randolfluo&#39;s blog">
 <meta property="og:description" content=":root {     --home-bg: #f7f7f4;     --home-surface: #ffffff;     --home-text: #1f2933;     --home-muted: #66717d;     --home-border: #e5e7eb;     --home-accent: #b45309;     --home-accent-soft: #f">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://randolfluo.top/album/wallpaper/img/img_8.png">
+<meta property="og:image" content="https://randolfluo.top/album/wallpaper/img/img_22.png">
 <meta property="article:published_time" content="2023-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-21T04:35:47.287Z">
+<meta property="article:modified_time" content="2026-08-22T10:56:01.108Z">
 <meta property="article:author" content="Randolf luo">
 <meta property="article:tag" content="Randolf luo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://randolfluo.top/album/wallpaper/img/img_8.png"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+<meta name="twitter:image" content="https://randolfluo.top/album/wallpaper/img/img_22.png"><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://randolfluo.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
     (() => {
       
     const saveToLocal = {
@@ -239,7 +239,8 @@
   .home-links a:focus-visible,
   .home-footer a:focus-visible,
   .home-button:focus-visible,
-  .home-project-link:focus-visible {
+  .home-project-link:focus-visible,
+  .home-carousel-button:focus-visible {
     outline: 3px solid rgba(180, 83, 9, .28);
     outline-offset: 4px;
   }
@@ -301,10 +302,38 @@
   .home-education-item::before { position: absolute; top: 5px; left: -29px; width: 11px; height: 11px; border: 3px solid var(--home-bg); border-radius: 50%; background: var(--home-accent); box-shadow: 0 0 0 1px var(--home-accent); content: ""; }
   .home-education-time { color: var(--home-accent); font-size: .9rem; font-weight: 700; }
   .home-education-school { margin: 0; font-size: 1.15rem; }
-  .home-projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .home-carousel-controls { display: flex; gap: 8px; }
+  .home-carousel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid var(--home-border);
+    border-radius: 10px;
+    color: var(--home-text);
+    background: var(--home-surface);
+    font: inherit;
+    cursor: pointer;
+    transition: color .2s ease, border-color .2s ease, background .2s ease;
+  }
+
+  .home-carousel-button:hover { color: var(--home-accent); border-color: #d6a46c; background: var(--home-accent-soft); }
+  .home-project-carousel { position: relative; }
+  .home-project-viewport { margin: -4px; padding: 4px; overflow: hidden; touch-action: pan-y; }
+  .home-projects {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+    transition: transform .58s cubic-bezier(.22, .61, .36, 1);
+  }
+
   .home-project {
     display: flex;
     flex-direction: column;
+    flex: 0 0 calc((100% - 32px) / 3);
+    box-sizing: border-box;
     min-height: 258px;
     padding: 24px;
     border: 1px solid var(--home-border);
@@ -332,11 +361,11 @@
     .home-education { padding-left: 26px; }
     .home-education-item { grid-template-columns: 1fr; gap: 8px; }
     .home-education-item::before { left: -25px; }
-    .home-projects { grid-template-columns: 1fr; }
+    .home-project { flex-basis: 100%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .home-links a, .home-button, .home-project { transition: none; }
+    .home-links a, .home-button, .home-project, .home-projects, .home-carousel-button { transition: none; }
   }
 </style>
 
@@ -387,35 +416,52 @@
     <section class="home-section" aria-labelledby="projects-title">
       <div class="home-section-heading">
         <h2 class="home-section-title" id="projects-title">做过的项目</h2>
+        <div class="home-carousel-controls" aria-label="项目轮播控制">
+          <button class="home-carousel-button" type="button" data-carousel-prev aria-label="上一个项目">←</button>
+          <button class="home-carousel-button" type="button" data-carousel-next aria-label="下一个项目">→</button>
+        </div>
       </div>
-      <div class="home-projects">
-        <article class="home-project">
-          <span class="home-project-index">01 · NETWORK</span>
-          <h3>TinyWebServer</h3>
-          <p>基于 C++ 的轻量级 WebServer，实践 HTTP、线程池、定时器、epoll 和日志系统。</p>
-          <div class="home-project-tags" aria-label="技术标签">
-            <span class="home-project-tag">C++</span><span class="home-project-tag">HTTP</span><span class="home-project-tag">epoll</span>
+      <div class="home-project-carousel" data-project-carousel role="region" aria-roledescription="轮播" aria-label="项目展示">
+        <div class="home-project-viewport">
+          <div class="home-projects" data-carousel-track>
+            <article class="home-project" aria-label="第 1 个项目，共 4 个">
+              <span class="home-project-index">01 · NETWORK</span>
+              <h3>TinyWebServer</h3>
+              <p>基于 C++ 的轻量级 WebServer，实践 HTTP、线程池、定时器、epoll 和日志系统。</p>
+              <div class="home-project-tags" aria-label="技术标签">
+                <span class="home-project-tag">C++</span><span class="home-project-tag">HTTP</span><span class="home-project-tag">epoll</span>
+              </div>
+              <a class="home-project-link" href="/categories/cpp/TinyWebServer/">查看相关笔记 →</a>
+            </article>
+            <article class="home-project" aria-label="第 2 个项目，共 4 个">
+              <span class="home-project-index">02 · SYSTEM</span>
+              <h3>xv6</h3>
+              <p>围绕 xv6 学习操作系统内核，记录进程、系统调用、内存和文件系统等机制。</p>
+              <div class="home-project-tags" aria-label="技术标签">
+                <span class="home-project-tag">C</span><span class="home-project-tag">Linux</span><span class="home-project-tag">操作系统</span>
+              </div>
+              <a class="home-project-link" href="/categories/OS/xv6/">查看相关笔记 →</a>
+            </article>
+            <article class="home-project" aria-label="第 3 个项目，共 4 个">
+              <span class="home-project-index">03 · CSAPP</span>
+              <h3>CSAPP Labs</h3>
+              <p>完成 Attack Lab、Bomb Lab、Malloc Lab、Shell Lab 等实验，理解系统底层与程序运行机制。</p>
+              <div class="home-project-tags" aria-label="技术标签">
+                <span class="home-project-tag">汇编</span><span class="home-project-tag">内存</span><span class="home-project-tag">系统编程</span>
+              </div>
+              <a class="home-project-link" href="/categories/csapp/lab/">查看实验记录 →</a>
+            </article>
+            <article class="home-project" aria-label="第 4 个项目，共 4 个">
+              <span class="home-project-index">04 · GRADUATION</span>
+              <h3>基于 Vue 的音乐播放器</h3>
+              <p>本科毕业设计，使用 Vue 3 构建播放器与曲库界面，结合 Go 后端实现本地音乐管理、歌单与局域网共享。</p>
+              <div class="home-project-tags" aria-label="技术标签">
+                <span class="home-project-tag">Vue 3</span><span class="home-project-tag">TypeScript</span><span class="home-project-tag">Go</span>
+              </div>
+              <a class="home-project-link" href="/2026/08/21/Project/MusicPlayer/基于Vue的音乐播放器毕业设计/">查看毕业设计 →</a>
+            </article>
           </div>
-          <a class="home-project-link" href="/categories/cpp/TinyWebServer/">查看相关笔记 →</a>
-        </article>
-        <article class="home-project">
-          <span class="home-project-index">02 · SYSTEM</span>
-          <h3>xv6</h3>
-          <p>围绕 xv6 学习操作系统内核，记录进程、系统调用、内存和文件系统等机制。</p>
-          <div class="home-project-tags" aria-label="技术标签">
-            <span class="home-project-tag">C</span><span class="home-project-tag">Linux</span><span class="home-project-tag">操作系统</span>
-          </div>
-          <a class="home-project-link" href="/categories/OS/xv6/">查看相关笔记 →</a>
-        </article>
-        <article class="home-project">
-          <span class="home-project-index">03 · CSAPP</span>
-          <h3>CSAPP Labs</h3>
-          <p>完成 Attack Lab、Bomb Lab、Malloc Lab、Shell Lab 等实验，理解系统底层与程序运行机制。</p>
-          <div class="home-project-tags" aria-label="技术标签">
-            <span class="home-project-tag">汇编</span><span class="home-project-tag">内存</span><span class="home-project-tag">系统编程</span>
-          </div>
-          <a class="home-project-link" href="/categories/csapp/lab/">查看实验记录 →</a>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -426,6 +472,136 @@
     <span><a href="https://github.com/Randolfluo" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="mailto:3436503471@qq.com">Email</a></span>
   </footer>
 </div>
+<script>
+  (() => {
+    const carousel = document.querySelector('[data-project-carousel]');
+    if (!carousel) return;
+
+    const viewport = carousel.querySelector('.home-project-viewport');
+    const track = carousel.querySelector('[data-carousel-track]');
+    const cards = Array.from(track.children);
+    const previousButton = document.querySelector('[data-carousel-prev]');
+    const nextButton = document.querySelector('[data-carousel-next]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let currentIndex = 0;
+    let logicalIndex = 0;
+    let visibleCards = 1;
+    let transitioning = false;
+    let autoTimer;
+    let resizeFrame;
+    let touchStartX = null;
+
+    const visibleCount = () => Math.min(
+      cards.length,
+      window.matchMedia('(max-width: 760px)').matches ? 1 : 3
+    );
+
+    const createClone = card => {
+      const clone = card.cloneNode(true);
+      clone.dataset.carouselClone = 'true';
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('a, button, [tabindex]').forEach(element => {
+        element.setAttribute('tabindex', '-1');
+      });
+      return clone;
+    };
+
+    const updatePosition = () => {
+      const firstCard = cards[0];
+      const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      const step = firstCard.getBoundingClientRect().width + gap;
+      track.style.transform = `translate3d(${-currentIndex * step}px, 0, 0)`;
+    };
+
+    const jumpTo = index => {
+      track.style.transition = 'none';
+      currentIndex = index;
+      updatePosition();
+      track.getBoundingClientRect();
+      track.style.transition = '';
+      transitioning = false;
+    };
+
+    const rebuildTrack = () => {
+      track.querySelectorAll('[data-carousel-clone]').forEach(clone => clone.remove());
+      visibleCards = visibleCount();
+
+      const leadingClones = cards.slice(-visibleCards).map(createClone);
+      const trailingClones = cards.slice(0, visibleCards).map(createClone);
+      track.prepend(...leadingClones);
+      track.append(...trailingClones);
+
+      jumpTo(visibleCards + logicalIndex);
+    };
+
+    const normalizePosition = () => {
+      if (currentIndex < visibleCards) {
+        jumpTo(currentIndex + cards.length);
+      } else if (currentIndex >= visibleCards + cards.length) {
+        jumpTo(currentIndex - cards.length);
+      } else {
+        transitioning = false;
+      }
+    };
+
+    const move = direction => {
+      if (cards.length <= 1 || transitioning) return;
+      logicalIndex = (logicalIndex + direction + cards.length) % cards.length;
+      currentIndex += direction;
+      transitioning = !reducedMotion.matches;
+      track.style.transition = reducedMotion.matches ? 'none' : '';
+      updatePosition();
+      if (reducedMotion.matches) normalizePosition();
+    };
+
+    const stopAutoPlay = () => window.clearInterval(autoTimer);
+    const startAutoPlay = () => {
+      stopAutoPlay();
+      if (reducedMotion.matches) return;
+      autoTimer = window.setInterval(() => move(1), 4200);
+    };
+
+    previousButton.addEventListener('click', () => {
+      move(-1);
+      startAutoPlay();
+    });
+    nextButton.addEventListener('click', () => {
+      move(1);
+      startAutoPlay();
+    });
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    carousel.addEventListener('focusin', stopAutoPlay);
+    carousel.addEventListener('focusout', event => {
+      if (!carousel.contains(event.relatedTarget)) startAutoPlay();
+    });
+    viewport.addEventListener('touchstart', event => {
+      touchStartX = event.touches[0].clientX;
+      stopAutoPlay();
+    }, { passive: true });
+    viewport.addEventListener('touchend', event => {
+      if (touchStartX === null) return;
+      const distance = touchStartX - event.changedTouches[0].clientX;
+      if (Math.abs(distance) > 45) move(distance > 0 ? 1 : -1);
+      touchStartX = null;
+      startAutoPlay();
+    }, { passive: true });
+    track.addEventListener('transitionend', event => {
+      if (event.target === track && event.propertyName === 'transform') normalizePosition();
+    });
+    window.addEventListener('resize', () => {
+      window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(rebuildTrack);
+    });
+    reducedMotion.addEventListener('change', () => {
+      rebuildTrack();
+      startAutoPlay();
+    });
+
+    rebuildTrack();
+    startAutoPlay();
+  })();
+</script>
 
 </div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2026 By Randolf luo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is Randolfluo</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
   const loadMathjax = () => {
